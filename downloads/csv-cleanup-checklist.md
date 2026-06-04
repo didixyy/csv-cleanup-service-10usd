@@ -24,6 +24,10 @@ Email list CSV cleanup:
 
 https://didixyy.github.io/csv-cleanup-service-10usd/email-list-csv-cleanup.html
 
+CSV cleanup brief builder:
+
+https://didixyy.github.io/csv-cleanup-service-10usd/csv-cleanup-brief-builder.html
+
 Scope checker:
 
 https://didixyy.github.io/remote-freelancer-first-sale-kit/scope-checker.html

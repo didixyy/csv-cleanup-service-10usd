@@ -1,0 +1,448 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CSV Cleanup Brief Builder for 10 USD Tasks</title>
+  <meta name="description" content="Build a clear fixed-scope CSV cleanup brief for one small CSV or Excel file up to 300 rows and 12 columns before paying 10 USD or opening the request form.">
+  <link rel="canonical" href="https://didixyy.github.io/csv-cleanup-service-10usd/csv-cleanup-brief-builder.html">
+  <link rel="icon" href="data:,">
+  <meta property="og:title" content="CSV Cleanup Brief Builder for 10 USD Tasks">
+  <meta property="og:description" content="Prepare a small CSV cleanup brief with row count, column count, cleanup type, payment sender email, and fixed-scope checks.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://didixyy.github.io/csv-cleanup-service-10usd/csv-cleanup-brief-builder.html">
+  <style>
+    :root {
+      --ink: #132029;
+      --muted: #4f5f68;
+      --line: #d9e2e7;
+      --paper: #ffffff;
+      --soft: #edf6f2;
+      --accent: #0f766e;
+      --accent-strong: #0a514b;
+      --warning: #985b18;
+      --danger: #9f1d1d;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.55;
+    }
+    a {
+      color: var(--accent-strong);
+    }
+    .wrap {
+      width: min(1080px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+    header,
+    section {
+      padding: 38px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    header,
+    .soft {
+      background: var(--soft);
+    }
+    nav,
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+    }
+    nav {
+      margin-bottom: 24px;
+    }
+    h1 {
+      max-width: 880px;
+      margin: 0;
+      font-size: clamp(34px, 6vw, 58px);
+      line-height: 1.05;
+      letter-spacing: 0;
+    }
+    h2 {
+      margin: 0 0 14px;
+      font-size: 28px;
+      letter-spacing: 0;
+    }
+    p {
+      max-width: 800px;
+      margin: 12px 0 0;
+      color: var(--muted);
+      font-size: 18px;
+    }
+    .button,
+    .secondary-button {
+      display: inline-flex;
+      min-height: 44px;
+      align-items: center;
+      justify-content: center;
+      padding: 11px 16px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .button {
+      color: #fff;
+      background: var(--accent);
+      border: 1px solid var(--accent);
+    }
+    .secondary-button {
+      color: var(--accent-strong);
+      background: #fff;
+      border: 1px solid var(--accent);
+    }
+    button.button,
+    button.secondary-button {
+      font-family: inherit;
+      font-size: 16px;
+    }
+    .split {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+      gap: 32px;
+      align-items: start;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+    .item,
+    .panel {
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+    }
+    .item {
+      min-height: 136px;
+    }
+    .item strong {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--ink);
+    }
+    .item span {
+      color: var(--muted);
+    }
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 700;
+      color: var(--ink);
+    }
+    input,
+    select,
+    textarea {
+      width: 100%;
+      min-height: 44px;
+      padding: 10px 12px;
+      border: 1px solid #b9c8cf;
+      border-radius: 6px;
+      color: var(--ink);
+      background: #fff;
+      font: inherit;
+    }
+    textarea {
+      min-height: 96px;
+      resize: vertical;
+    }
+    .field-note {
+      margin-top: 5px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .status {
+      margin-top: 16px;
+      padding: 14px 16px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      font-weight: 700;
+    }
+    .status-fit {
+      border-color: var(--accent);
+      color: var(--accent-strong);
+    }
+    .status-review {
+      border-color: var(--warning);
+      color: var(--warning);
+    }
+    .status-blocked {
+      border-color: var(--danger);
+      color: var(--danger);
+    }
+    pre {
+      overflow-x: auto;
+      min-height: 360px;
+      margin: 0;
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      color: var(--ink);
+      background: #f8fbfa;
+      white-space: pre-wrap;
+      word-break: break-word;
+      font: 15px/1.55 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    }
+    .warning {
+      color: var(--warning);
+      font-weight: 700;
+    }
+    footer {
+      padding: 28px 0 42px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    @media (max-width: 760px) {
+      .wrap {
+        width: min(100% - 28px, 1080px);
+      }
+      .split {
+        grid-template-columns: 1fr;
+      }
+      .button,
+      .secondary-button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <nav>
+        <a class="secondary-button" href="index.html">10 USD service</a>
+        <a class="secondary-button" href="csv-cleanup-checklist.html">Cleanup checklist</a>
+        <a class="secondary-button" href="email-list-csv-cleanup.html">Email list CSV</a>
+        <a class="secondary-button" href="invoice-contact-csv-cleanup.html">Invoice/contact CSV</a>
+        <a class="secondary-button" href="https://didixyy.github.io/remote-freelancer-first-sale-kit/scope-checker.html">Scope checker</a>
+        <a class="secondary-button" href="https://didixyy.github.io/remote-freelancer-first-sale-kit/csv-cleanup-delivery-example.html">Sample delivery</a>
+        <a class="secondary-button" href="https://github.com/didixyy/csv-cleanup-service-10usd/issues/new?template=csv-cleanup.yml">Request form</a>
+        <a class="secondary-button" href="https://github.com/didixyy/csv-cleanup-service-10usd/issues/1">Order desk</a>
+      </nav>
+      <h1>CSV Cleanup Brief Builder for 10 USD Tasks</h1>
+      <p>Build a clear fixed-scope request for one small CSV or Excel file before paying or opening the GitHub request form. The generated brief stays in this browser until you copy it.</p>
+      <div class="actions" style="margin-top: 18px;">
+        <a class="button" href="https://paypal.me/yp1233/10USD">Pay 10 USD now</a>
+        <a class="secondary-button" href="https://github.com/didixyy/csv-cleanup-service-10usd/issues/new?template=csv-cleanup.yml">Open request form</a>
+        <a class="secondary-button" href="https://gist.github.com/didixyy/de284f9da1dda46dd1615c133d4ff62d">Public Gist</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <div class="wrap split">
+        <div>
+          <h2>Build the brief</h2>
+          <p>Use row count and column count to decide whether the fixed 10 USD path fits. If the task is larger or unclear, submit the request before paying.</p>
+          <div id="scopeStatus" class="status status-review">Enter row count and column count to check the fixed scope.</div>
+        </div>
+        <form id="briefForm" class="grid" autocomplete="off">
+          <div class="panel">
+            <label for="fileType">File type</label>
+            <select id="fileType">
+              <option>CSV</option>
+              <option>Excel</option>
+              <option>Google Sheets export</option>
+            </select>
+          </div>
+          <div class="panel">
+            <label for="cleanupType">Cleanup type</label>
+            <select id="cleanupType">
+              <option>General CSV cleanup</option>
+              <option>Product CSV cleanup</option>
+              <option>Order export CSV cleanup</option>
+              <option>Invoice and contact CSV cleanup</option>
+              <option>Email list CSV cleanup</option>
+            </select>
+          </div>
+          <div class="panel">
+            <label for="rowCount">Row count</label>
+            <input id="rowCount" type="number" min="1" step="1" placeholder="Example: 120">
+            <div class="field-note">Fixed scope is up to 300 rows.</div>
+          </div>
+          <div class="panel">
+            <label for="columnCount">Column count</label>
+            <input id="columnCount" type="number" min="1" step="1" placeholder="Example: 8">
+            <div class="field-note">Fixed scope is up to 12 columns.</div>
+          </div>
+          <div class="panel">
+            <label for="paymentEmail">Payment sender email</label>
+            <input id="paymentEmail" type="email" placeholder="Only if already paid">
+            <div class="field-note">Used only to match a visible PayPal payment.</div>
+          </div>
+          <div class="panel">
+            <label for="fileNote">File or brief note</label>
+            <input id="fileNote" type="text" placeholder="Example: product import CSV">
+          </div>
+          <div class="panel">
+            <label for="cleaningRequest">What should be cleaned</label>
+            <textarea id="cleaningRequest" placeholder="Example: trim spaces, normalize headers, remove blank rows, review exact duplicate rows"></textarea>
+          </div>
+          <div class="panel">
+            <label for="doNotChange">What must not be changed</label>
+            <textarea id="doNotChange" placeholder="Example: do not rewrite values, prices, dates, status, or IDs"></textarea>
+          </div>
+          <div class="panel">
+            <label for="expectedResult">Expected result</label>
+            <textarea id="expectedResult" placeholder="Example: cleaned CSV plus short delivery note"></textarea>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section class="soft">
+      <div class="wrap split">
+        <div>
+          <h2>Generated brief</h2>
+          <p>Copy this into the GitHub request form or email it after payment. Keep private credentials, bank details, card data, and passwords out of the request.</p>
+          <div class="actions" style="margin-top: 16px;">
+            <button id="copyBrief" class="button" type="button">Copy brief</button>
+            <a class="secondary-button" href="https://github.com/didixyy/csv-cleanup-service-10usd/issues/new?template=csv-cleanup.yml">Open request form</a>
+            <a class="secondary-button" href="mailto:331596501@qq.com?subject=10%20USD%20CSV%20cleanup%20brief">Email brief</a>
+          </div>
+          <p id="copyStatus" class="field-note" aria-live="polite">Brief updates automatically as you type.</p>
+        </div>
+        <pre id="briefOutput" tabindex="0"></pre>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <h2>Fixed 10 USD boundary</h2>
+        <div class="grid">
+          <div class="item"><strong>Included</strong><span>One CSV or Excel file, up to 300 rows and 12 columns, readable headers, spacing cleanup, blank row cleanup, obvious duplicate row review, and a short delivery note.</span></div>
+          <div class="item"><strong>Not included</strong><span>No accounting, tax, legal, investment, audit, import troubleshooting, research, data-verification, shipping result, email delivery result, marketing result, compliance result, payment dispute result, or platform login work.</span></div>
+          <div class="item"><strong>Payment match</strong><span>After paying through PayPal.Me, include the Payment sender email in the request so the payment can be matched manually.</span></div>
+          <div class="item"><strong>Before paying</strong><span>If the row count, column count, or cleanup rule is unclear, open the request form before paying.</span></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">Contact: 331596501@qq.com. Fixed-scope payment link: https://paypal.me/yp1233/10USD</div>
+  </footer>
+
+  <script>
+    const fields = {
+      fileType: document.getElementById("fileType"),
+      cleanupType: document.getElementById("cleanupType"),
+      rowCount: document.getElementById("rowCount"),
+      columnCount: document.getElementById("columnCount"),
+      paymentEmail: document.getElementById("paymentEmail"),
+      fileNote: document.getElementById("fileNote"),
+      cleaningRequest: document.getElementById("cleaningRequest"),
+      doNotChange: document.getElementById("doNotChange"),
+      expectedResult: document.getElementById("expectedResult")
+    };
+    const output = document.getElementById("briefOutput");
+    const scopeStatus = document.getElementById("scopeStatus");
+    const copyStatus = document.getElementById("copyStatus");
+    const copyButton = document.getElementById("copyBrief");
+
+    function valueOf(field, fallback) {
+      return field.value.trim() || fallback;
+    }
+
+    function parseCount(field) {
+      const value = Number.parseInt(field.value, 10);
+      return Number.isFinite(value) && value > 0 ? value : null;
+    }
+
+    function updateStatus(rowCount, columnCount) {
+      scopeStatus.classList.remove("status-fit", "status-review", "status-blocked");
+
+      if (rowCount === null || columnCount === null) {
+        scopeStatus.textContent = "Enter row count and column count to check the fixed scope.";
+        scopeStatus.classList.add("status-review");
+        return "Scope needs row and column count before payment.";
+      }
+
+      if (rowCount <= 300 && columnCount <= 12) {
+        scopeStatus.textContent = "This appears to fit the fixed 10 USD starter scope.";
+        scopeStatus.classList.add("status-fit");
+        return "Appears to fit the fixed 10 USD scope.";
+      }
+
+      scopeStatus.textContent = "This appears over the fixed 10 USD scope. Submit the request before paying.";
+      scopeStatus.classList.add("status-blocked");
+      return "Over fixed 10 USD scope. Request scope review before paying.";
+    }
+
+    function buildBrief() {
+      const rowCount = parseCount(fields.rowCount);
+      const columnCount = parseCount(fields.columnCount);
+      const scopeLine = updateStatus(rowCount, columnCount);
+      const paymentEmail = valueOf(fields.paymentEmail, "Not paid yet / will add after payment");
+
+      const lines = [
+        "10 USD CSV cleanup brief",
+        "",
+        `File type: ${valueOf(fields.fileType, "CSV")}`,
+        `Cleanup type: ${valueOf(fields.cleanupType, "General CSV cleanup")}`,
+        `Row count: ${rowCount === null ? "Unknown" : rowCount}`,
+        `Column count: ${columnCount === null ? "Unknown" : columnCount}`,
+        `Scope check: ${scopeLine}`,
+        `Payment sender email: ${paymentEmail}`,
+        "",
+        `File or brief note: ${valueOf(fields.fileNote, "One small CSV or Excel file")}`,
+        "",
+        "What should be cleaned:",
+        valueOf(fields.cleaningRequest, "Trim extra spaces, normalize readable headers, remove blank rows, and review obvious duplicate rows."),
+        "",
+        "What must not be changed:",
+        valueOf(fields.doNotChange, "Do not rewrite values, prices, dates, IDs, status, or business meaning unless the rule is explicit."),
+        "",
+        "Expected result:",
+        valueOf(fields.expectedResult, "Cleaned file plus a short delivery note explaining what changed."),
+        "",
+        "Useful links:",
+        "Payment link: https://paypal.me/yp1233/10USD",
+        "Request form: https://github.com/didixyy/csv-cleanup-service-10usd/issues/new?template=csv-cleanup.yml",
+        "Sample delivery: https://didixyy.github.io/remote-freelancer-first-sale-kit/csv-cleanup-delivery-example.html",
+        "Scope checker: https://didixyy.github.io/remote-freelancer-first-sale-kit/scope-checker.html",
+        "",
+        "Private credentials, bank details, card data, passwords, and platform logins are not included."
+      ];
+
+      output.textContent = lines.join("\n");
+    }
+
+    async function copyBrief() {
+      const text = output.textContent;
+
+      try {
+        await navigator.clipboard.writeText(text);
+        copyStatus.textContent = "Brief copied. Paste it into the request form or email.";
+      } catch (error) {
+        const selection = window.getSelection();
+        const range = document.createRange();
+        range.selectNodeContents(output);
+        selection.removeAllRanges();
+        selection.addRange(range);
+        copyStatus.textContent = "Clipboard access was unavailable. The brief text is selected for copying.";
+      }
+    }
+
+    Object.values(fields).forEach((field) => {
+      field.addEventListener("input", buildBrief);
+      field.addEventListener("change", buildBrief);
+    });
+
+    copyButton.addEventListener("click", copyBrief);
+    buildBrief();
+  </script>
+</body>
+</html>

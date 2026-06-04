@@ -16,6 +16,10 @@ Order export CSV cleanup:
 
 https://didixyy.github.io/csv-cleanup-service-10usd/order-export-csv-cleanup.html
 
+Invoice and contact CSV cleanup:
+
+https://didixyy.github.io/csv-cleanup-service-10usd/invoice-contact-csv-cleanup.html
+
 Scope checker:
 
 https://didixyy.github.io/remote-freelancer-first-sale-kit/scope-checker.html

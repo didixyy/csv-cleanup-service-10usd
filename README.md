@@ -28,6 +28,10 @@ Order export CSV cleanup:
 
 https://didixyy.github.io/csv-cleanup-service-10usd/order-export-csv-cleanup.html
 
+Invoice and contact CSV cleanup:
+
+https://didixyy.github.io/csv-cleanup-service-10usd/invoice-contact-csv-cleanup.html
+
 Downloadable checklist release:
 
 https://github.com/didixyy/csv-cleanup-service-10usd/releases/tag/csv-cleanup-checklist-v1
@@ -91,7 +95,7 @@ https://didixyy.github.io/csv-cleanup-service-10usd/order-export-csv-cleanup.htm
 
 Invoice and contact CSV cleanup:
 
-https://didixyy.github.io/remote-freelancer-first-sale-kit/invoice-contact-csv-cleanup.html
+https://didixyy.github.io/csv-cleanup-service-10usd/invoice-contact-csv-cleanup.html
 
 Public order desk:
 

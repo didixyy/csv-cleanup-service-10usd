@@ -3,22 +3,22 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Order Export CSV Cleanup from 10 USD</title>
-  <meta name="description" content="Fixed-scope 10 USD cleanup for one small order export CSV or Excel file up to 300 rows and 12 columns. Clean customer email, shipping, item, status, date, and amount columns before review.">
-  <link rel="canonical" href="https://didixyy.github.io/csv-cleanup-service-10usd/order-export-csv-cleanup.html">
+  <title>Invoice and Contact CSV Cleanup from 10 USD</title>
+  <meta name="description" content="Fixed-scope 10 USD cleanup for one small invoice, customer, or contact list CSV up to 300 rows and 12 columns. Clean names, emails, invoice IDs, dates, status, and amount columns before review.">
+  <link rel="canonical" href="https://didixyy.github.io/csv-cleanup-service-10usd/invoice-contact-csv-cleanup.html">
   <link rel="icon" href="data:,">
-  <meta property="og:title" content="Order Export CSV Cleanup from 10 USD">
-  <meta property="og:description" content="Clean one small order export CSV: order ID, customer email, shipping name, item, quantity, status, date, amount, headers, spacing, blank rows, and obvious duplicates.">
+  <meta property="og:title" content="Invoice and Contact CSV Cleanup from 10 USD">
+  <meta property="og:description" content="Clean one small invoice or contact CSV: contact name, company name, email, phone, invoice ID, due date, status, amount, headers, spacing, blank rows, and obvious duplicates.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://didixyy.github.io/csv-cleanup-service-10usd/order-export-csv-cleanup.html">
+  <meta property="og:url" content="https://didixyy.github.io/csv-cleanup-service-10usd/invoice-contact-csv-cleanup.html">
   <meta property="og:image" content="https://didixyy.github.io/remote-freelancer-first-sale-kit/assets/remote-work-desk.png">
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Service",
-      "name": "Order Export CSV Cleanup from 10 USD",
-      "serviceType": "Order export CSV cleanup",
-      "description": "A fixed-scope cleanup service for one small order export CSV or Excel file up to 300 rows and 12 columns.",
+      "name": "Invoice and Contact CSV Cleanup from 10 USD",
+      "serviceType": "Invoice and contact CSV cleanup",
+      "description": "A fixed-scope cleanup service for one small invoice, customer, or contact list CSV or Excel file up to 300 rows and 12 columns.",
       "provider": {
         "@type": "Person",
         "email": "331596501@qq.com",
@@ -62,7 +62,7 @@
       margin: 0 auto;
     }
     .hero {
-      min-height: 80vh;
+      min-height: 88vh;
       display: flex;
       align-items: end;
       padding: 28px 0 56px;
@@ -103,10 +103,10 @@
       background: rgba(8, 24, 26, 0.38);
     }
     h1 {
-      max-width: 780px;
+      max-width: 860px;
       margin: 0;
-      font-size: clamp(38px, 6vw, 64px);
-      line-height: 1.02;
+      font-size: clamp(34px, 5vw, 58px);
+      line-height: 1.05;
       letter-spacing: 0;
     }
     h2 {
@@ -228,8 +228,8 @@
         width: min(100% - 28px, 1080px);
       }
       .hero {
-        min-height: 88vh;
-        padding-top: 150px;
+        min-height: 92vh;
+        padding-top: 170px;
       }
       .split {
         grid-template-columns: 1fr;
@@ -249,7 +249,7 @@
         <a href="index.html">10 USD service</a>
         <a href="csv-cleanup-checklist.html">Cleanup checklist</a>
         <a href="shopify-woocommerce-product-csv-cleanup.html">Shopify/WooCommerce CSV</a>
-        <a href="invoice-contact-csv-cleanup.html">Invoice/contact CSV</a>
+        <a href="order-export-csv-cleanup.html">Order export CSV</a>
         <a href="https://github.com/didixyy/csv-cleanup-service-10usd/issues/1">Order desk</a>
         <a href="https://didixyy.github.io/remote-freelancer-first-sale-kit/scope-checker.html">Check scope</a>
         <a href="https://didixyy.github.io/remote-freelancer-first-sale-kit/csv-cleanup-delivery-example.html">Sample delivery</a>
@@ -257,13 +257,13 @@
       </div>
     </nav>
     <div class="wrap">
-      <h1>Order Export CSV Cleanup from 10 USD</h1>
-      <p>Clean one small order export CSV or Excel file up to 300 rows and 12 columns: order ID, customer email, shipping name, item, quantity, status, date, amount, headers, spacing, blank rows, and obvious duplicate rows.</p>
+      <h1>Invoice and Contact CSV Cleanup from 10 USD</h1>
+      <p>Clean one small invoice, customer, or contact list CSV up to 300 rows and 12 columns: contact name, company name, email, phone, invoice ID, due date, status, amount, headers, spacing, blank rows, and obvious duplicate rows.</p>
       <div class="price">Fixed starter price: 10 USD</div>
       <div class="actions" style="margin-top: 18px;">
         <a class="button" href="https://paypal.me/yp1233/10USD">Pay 10 USD now</a>
         <a class="secondary-button" href="https://github.com/didixyy/csv-cleanup-service-10usd/issues/new?template=csv-cleanup.yml">Submit CSV request</a>
-        <a class="secondary-button" href="https://gist.github.com/didixyy/f35a474981e65e34f80000ddf98afd8e">Public Gist</a>
+        <a class="secondary-button" href="https://gist.github.com/didixyy/f80c1fdfb5a476b15ce722e2c5291079">Public Gist</a>
       </div>
     </div>
   </header>
@@ -273,27 +273,27 @@
       <div class="wrap split">
         <div>
           <h2>When this is a fit</h2>
-          <p>This is for small order export files that need visible cleanup before review, shipping handoff, or customer support work.</p>
-          <p class="warning">If you need payment dispute work, shipping carrier troubleshooting, tax review, accounting, or platform login help, do not use this fixed 10 USD path.</p>
+          <p>This is for small invoice exports, customer lists, or contact CSV files that need visible cleanup before manual review, outreach, or import preparation.</p>
+          <p class="warning">If you need accounting, tax review, debt collection, email campaign work, payment dispute help, or platform login help, do not use this fixed 10 USD path.</p>
         </div>
         <ul>
           <li>One CSV or Excel file.</li>
           <li>Up to 300 rows and 12 columns.</li>
-          <li>Order export, shipment export, customer order list, or small sales report CSV.</li>
+          <li>Invoice export, contact list, customer list, vendor list, or small follow-up tracker.</li>
           <li>Visible cleanup only: headers, spaces, blank rows, obvious duplicate review, and a short delivery note.</li>
-          <li>No platform login, payment dispute result, shipping carrier result, accounting, or data guessing.</li>
+          <li>No accounting result, debt collection result, email delivery result, tax opinion, legal opinion, or data guessing.</li>
         </ul>
       </div>
     </section>
 
     <section class="soft">
       <div class="wrap">
-        <h2>Common order export fields</h2>
+        <h2>Common invoice and contact fields</h2>
         <div class="grid">
-          <div class="item"><strong>Order ID and date</strong><span>Clean visible order_id, order_number, order_date, paid_at, and ship_date headers without changing their meaning.</span></div>
-          <div class="item"><strong>Customer email</strong><span>Keep customer email and customer name values intact while cleaning spacing, blank rows, and duplicate rows.</span></div>
-          <div class="item"><strong>Shipping fields</strong><span>Review shipping name, address, city, country, tracking, carrier, and ship status columns for readable labels.</span></div>
-          <div class="item"><strong>Item and amount</strong><span>Clean item name, SKU, quantity, order status, payment status, subtotal, tax, shipping, and total columns for review.</span></div>
+          <div class="item"><strong>Contact identity</strong><span>Clean visible contact_name, company_name, first_name, last_name, and customer_id headers without changing their meaning.</span></div>
+          <div class="item"><strong>Email and phone</strong><span>Keep email, phone, and website values intact while cleaning spacing, blank rows, and exact duplicate rows.</span></div>
+          <div class="item"><strong>Invoice fields</strong><span>Review invoice_id, invoice_date, due_date, payment_status, currency, subtotal, tax, and total columns for readable labels.</span></div>
+          <div class="item"><strong>Follow-up fields</strong><span>Clean notes, owner, tag, segment, last_contacted, and next_step columns when the values are already visible.</span></div>
         </div>
       </div>
     </section>
@@ -318,49 +318,49 @@
     <section>
       <div class="wrap split">
         <div>
-          <h2>Example order CSV shape</h2>
+          <h2>Example invoice and contact CSV shape</h2>
           <p>The table below shows the kind of visible cleanup this service covers. The real delivery sample is linked before payment.</p>
           <div class="actions" style="margin-top: 16px;">
             <a class="button" href="https://didixyy.github.io/remote-freelancer-first-sale-kit/csv-cleanup-delivery-example.html">View sample delivery</a>
             <a class="secondary-button" href="https://github.com/didixyy/remote-freelancer-first-sale-kit/releases/tag/csv-cleanup-delivery-example-v1">Download sample package</a>
           </div>
         </div>
-        <div class="sample" aria-label="Example order export CSV table">
+        <div class="sample" aria-label="Example invoice and contact CSV table">
           <table>
             <thead>
               <tr>
-                <th>order_id</th>
-                <th>customer_email</th>
-                <th>shipping_name</th>
-                <th>item_name</th>
-                <th>quantity</th>
-                <th>order_status</th>
+                <th>contact_name</th>
+                <th>company_name</th>
+                <th>email</th>
+                <th>invoice_id</th>
+                <th>due_date</th>
+                <th>payment_status</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>10045</td>
-                <td>buyer@example.com</td>
                 <td>A. Chen</td>
-                <td>Cotton Tote Bag</td>
-                <td>2</td>
-                <td>paid</td>
+                <td>Northline Studio</td>
+                <td>accounts@example.com</td>
+                <td>INV-1024</td>
+                <td>2026-06-15</td>
+                <td>open</td>
               </tr>
               <tr>
-                <td>10046</td>
-                <td>support@example.com</td>
                 <td>M. Patel</td>
-                <td>Desk Cable Clips</td>
-                <td>1</td>
-                <td>fulfilled</td>
+                <td>Bright Supply Co</td>
+                <td>billing@example.com</td>
+                <td>INV-1025</td>
+                <td>2026-06-18</td>
+                <td>sent</td>
               </tr>
               <tr>
-                <td>10047</td>
-                <td>orders@example.com</td>
                 <td>R. Gomez</td>
-                <td>Notebook Set</td>
-                <td>3</td>
-                <td>pending</td>
+                <td>Market Desk</td>
+                <td>hello@example.com</td>
+                <td>INV-1026</td>
+                <td>2026-06-20</td>
+                <td>review</td>
               </tr>
             </tbody>
           </table>
@@ -372,13 +372,13 @@
       <div class="wrap split">
         <div>
           <h2>Do not use this for</h2>
-          <p>No accounting, tax, legal, investment, audit, import troubleshooting, research, data-verification, shipping carrier result, payment dispute result, chargeback outcome, or guaranteed-income work is included.</p>
+          <p>No accounting, tax, legal, investment, audit, import troubleshooting, research, data-verification, debt collection result, email delivery result, payment dispute result, or guaranteed-income work is included.</p>
         </div>
         <ul>
-          <li>Logging into ecommerce, marketplace, shipping, carrier, or payment platforms.</li>
-          <li>Resolving chargebacks, refunds, payment disputes, shipping disputes, or carrier claims.</li>
-          <li>Researching missing customers, rewriting order data, or guessing values.</li>
-          <li>Changing amounts, taxes, payment status, or accounting meaning without an explicit visible rule.</li>
+          <li>Logging into email, CRM, accounting, invoice, marketplace, or payment platforms.</li>
+          <li>Sending emails, collecting debt, resolving disputes, changing payment status, or deciding tax/accounting treatment.</li>
+          <li>Researching missing people, companies, invoice details, or contact details.</li>
+          <li>Changing amounts, dates, payment status, or business meaning without an explicit visible rule.</li>
           <li>Private credentials, bank details, card data, passwords, or platform logins.</li>
         </ul>
       </div>

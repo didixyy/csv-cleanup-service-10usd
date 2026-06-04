@@ -20,6 +20,10 @@ CSV cleanup checklist:
 
 https://didixyy.github.io/csv-cleanup-service-10usd/csv-cleanup-checklist.html
 
+Downloadable checklist release:
+
+https://github.com/didixyy/csv-cleanup-service-10usd/releases/tag/csv-cleanup-checklist-v1
+
 Payment link for confirmed fixed-scope work:
 
 https://paypal.me/yp1233/10USD

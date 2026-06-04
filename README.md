@@ -6,6 +6,10 @@ Small CSV files often need a quick cleanup before someone can review, import, or
 
 Direct fixed-scope order page:
 
+https://didixyy.github.io/csv-cleanup-service-10usd/
+
+Main order page:
+
 https://didixyy.github.io/remote-freelancer-first-sale-kit/start-csv-cleanup.html
 
 Fast scope checker:

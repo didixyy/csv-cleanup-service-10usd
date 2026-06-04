@@ -1,0 +1,152 @@
+name: CSV cleanup request reply
+
+on:
+  issues:
+    types:
+      - opened
+      - edited
+
+permissions:
+  issues: write
+  contents: read
+
+jobs:
+  reply:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Reply to CSV cleanup request
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const action = context.payload.action;
+            const labels = context.payload.issue.labels.map((label) => label.name);
+
+            if (!labels.includes("csv-cleanup")) {
+              return;
+            }
+
+            const extractIssueFormValue = (body, fieldName) => {
+              const escapedFieldName = fieldName.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+              const pattern = new RegExp(`### ${escapedFieldName}\\n\\n([\\s\\S]*?)(?=\\n\\n### |$)`, "i");
+              const match = body.match(pattern);
+              return match ? match[1].trim() : "";
+            };
+
+            const parsePositiveNumber = (value) => {
+              const match = value.match(/\\d+/);
+              return match ? Number.parseInt(match[0], 10) : null;
+            };
+
+            const issueBody = context.payload.issue.body || "";
+            const paymentSenderEmail = extractIssueFormValue(issueBody, "Payment sender email");
+            const rowCount = parsePositiveNumber(extractIssueFormValue(issueBody, "Row count"));
+            const columnCount = parsePositiveNumber(extractIssueFormValue(issueBody, "Column count"));
+            const isPaidBrief = paymentSenderEmail && paymentSenderEmail.toLowerCase() !== "_no response_";
+            const isOverLimit = (rowCount !== null && rowCount > 300) || (columnCount !== null && columnCount > 12);
+            const isFixedScope = rowCount !== null && columnCount !== null && rowCount <= 300 && columnCount <= 12;
+
+            const desiredLabels = [];
+            const followUps = [];
+
+            if (isPaidBrief) {
+              desiredLabels.push("paid-brief");
+              followUps.push(
+                "",
+                "Payment matching note:",
+                "",
+                "The request includes a Payment sender email. Please keep the issue open until the payment is visible in PayPal and matched manually."
+              );
+            }
+
+            if (isFixedScope) {
+              desiredLabels.push("fixed-scope");
+              followUps.push(
+                "",
+                "Fixed-scope note:",
+                "",
+                "This request appears to fit the fixed 10 USD scope."
+              );
+            }
+
+            if (isOverLimit) {
+              desiredLabels.push("over-limit");
+              followUps.push(
+                "",
+                "This request appears to be over the fixed 10 USD scope.",
+                "",
+                "Please wait for scope confirmation before paying or sending more files."
+              );
+            }
+
+            const managedLabels = ["paid-brief", "fixed-scope", "over-limit"];
+            const labelsToAdd = desiredLabels.filter((label) => !labels.includes(label));
+            const labelsToRemove = managedLabels.filter((label) => labels.includes(label) && !desiredLabels.includes(label));
+
+            if (labelsToAdd.length > 0) {
+              await github.rest.issues.addLabels({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.payload.issue.number,
+                labels: labelsToAdd
+              });
+            }
+
+            for (const label of labelsToRemove) {
+              await github.rest.issues.removeLabel({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.payload.issue.number,
+                name: label
+              });
+            }
+
+            const baseBody = [
+              "CSV cleanup request received.",
+              "",
+              "Fixed-scope reminder:",
+              "",
+              "- One CSV or Excel file.",
+              "- Up to 300 rows and 12 columns.",
+              "- Visible cleanup only: readable labels, spacing cleanup, blank row cleanup, obvious duplicate review, and a short delivery note.",
+              "- No accounting, tax, legal, investment, audit, import troubleshooting, research, data-verification, guaranteed-income, marketplace approval, shipping result, or payment dispute result.",
+              "",
+              "Useful links:",
+              "",
+              "- Service page: https://didixyy.github.io/csv-cleanup-service-10usd/",
+              "- Checklist: https://didixyy.github.io/csv-cleanup-service-10usd/csv-cleanup-checklist.html",
+              "- Scope checker: https://didixyy.github.io/remote-freelancer-first-sale-kit/scope-checker.html",
+              "- Sample delivery: https://didixyy.github.io/remote-freelancer-first-sale-kit/csv-cleanup-delivery-example.html",
+              "- Payment link for confirmed fixed-scope work: https://paypal.me/yp1233/10USD",
+              "",
+              "If you already paid, make sure the request includes the Payment sender email so the payment can be matched manually."
+            ].join("\\n");
+
+            if (action === "opened") {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.payload.issue.number,
+                body: `${baseBody}${followUps.join("\\n")}`
+              });
+              return;
+            }
+
+            if (labelsToAdd.length > 0 || labelsToRemove.length > 0) {
+              const updateBody = [
+                "CSV request updated after edit.",
+                "",
+                labelsToAdd.length > 0 ? `Labels added: ${labelsToAdd.join(", ")}` : "",
+                labelsToRemove.length > 0 ? `Labels removed: ${labelsToRemove.join(", ")}` : "",
+                "",
+                "Payment sender email is used only to match a visible PayPal payment to this request.",
+                "Service page: https://didixyy.github.io/csv-cleanup-service-10usd/",
+                "Payment link for confirmed fixed-scope work: https://paypal.me/yp1233/10USD"
+              ].filter(Boolean).join("\\n");
+
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.payload.issue.number,
+                body: updateBody
+              });
+            }

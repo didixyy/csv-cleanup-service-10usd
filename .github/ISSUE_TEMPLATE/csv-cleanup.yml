@@ -1,0 +1,103 @@
+name: CSV cleanup request
+description: Request one fixed-scope 10 USD CSV or Excel cleanup.
+title: "[CSV cleanup] "
+labels: ["csv-cleanup", "scope-review"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form for one CSV or Excel file only. Fixed 10 USD cleanup is for up to 300 rows and 12 columns.
+
+        Pay only when the file clearly fits the fixed scope:
+        https://paypal.me/yp1233/10USD
+
+        If you already paid, include the Payment sender email so the payment can be matched to the request.
+
+        Scope checker:
+        https://didixyy.github.io/remote-freelancer-first-sale-kit/scope-checker.html
+
+        Sample delivery:
+        https://didixyy.github.io/remote-freelancer-first-sale-kit/csv-cleanup-delivery-example.html
+
+        No accounting, tax, legal, investment, audit, import troubleshooting, research, data-verification, or guaranteed-income work is included.
+  - type: dropdown
+    id: file-type
+    attributes:
+      label: File type
+      options:
+        - CSV
+        - Excel
+    validations:
+      required: true
+  - type: input
+    id: row-count
+    attributes:
+      label: Row count
+      description: Enter the approximate row count. Fixed scope is up to 300 rows.
+      placeholder: "120"
+    validations:
+      required: true
+  - type: input
+    id: column-count
+    attributes:
+      label: Column count
+      description: Enter the approximate column count. Fixed scope is up to 12 columns.
+      placeholder: "8"
+    validations:
+      required: true
+  - type: dropdown
+    id: cleanup-type
+    attributes:
+      label: Cleanup type
+      options:
+        - Product CSV
+        - Order export CSV
+        - Invoice or contact CSV
+        - General CSV
+    validations:
+      required: true
+  - type: textarea
+    id: clean
+    attributes:
+      label: What should be cleaned?
+      description: Describe the visible cleanup needed.
+      placeholder: The file has repeated rows, unclear labels, blank rows, and inconsistent spacing.
+    validations:
+      required: true
+  - type: textarea
+    id: keep
+    attributes:
+      label: What must not be changed?
+      description: List columns, values, wording, or formatting that should stay untouched.
+      placeholder: Do not change SKUs, prices, customer names, invoice IDs, or dates.
+    validations:
+      required: true
+  - type: textarea
+    id: expected-result
+    attributes:
+      label: Expected result
+      description: Describe the delivery you expect.
+      placeholder: A cleaner CSV with readable column names, obvious duplicate rows removed, and a short change note.
+    validations:
+      required: true
+  - type: input
+    id: payment-sender-email
+    attributes:
+      label: Payment sender email
+      description: Required only if you already paid. This is used to match a visible PayPal payment to this request.
+      placeholder: buyer@example.com
+    validations:
+      required: false
+  - type: checkboxes
+    id: confirmations
+    attributes:
+      label: Confirm scope
+      options:
+        - label: I understand fixed 10 USD cleanup is for one CSV or Excel file up to 300 rows and 12 columns.
+          required: true
+        - label: I will not send private credentials, bank details, card data, passwords, or platform logins.
+          required: true
+        - label: I understand accounting, tax, legal, investment, audit, import troubleshooting, research, data-verification, and guaranteed-income work are not included.
+          required: true
+        - label: I understand payment is matched by the Payment sender email if I already paid.
+          required: true

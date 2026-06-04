@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 10 USD CSV scope checker
+    url: https://didixyy.github.io/remote-freelancer-first-sale-kit/scope-checker.html
+    about: Check whether one small CSV or Excel file fits the fixed 10 USD scope before paying.
+  - name: Sample CSV cleanup delivery
+    url: https://didixyy.github.io/remote-freelancer-first-sale-kit/csv-cleanup-delivery-example.html
+    about: Review the sample delivery package before ordering.

@@ -30,7 +30,7 @@ https://paypal.me/yp1233/10USD
 
 CSV cleanup request form:
 
-https://github.com/didixyy/remote-freelancer-first-sale-kit/issues/new?template=csv-cleanup.yml
+https://github.com/didixyy/csv-cleanup-service-10usd/issues/new?template=csv-cleanup.yml
 
 Contact email:
 
@@ -84,6 +84,10 @@ https://didixyy.github.io/remote-freelancer-first-sale-kit/invoice-contact-csv-c
 Public order desk:
 
 https://github.com/didixyy/remote-freelancer-first-sale-kit/issues/3
+
+Focused repo request form:
+
+https://github.com/didixyy/csv-cleanup-service-10usd/issues/new?template=csv-cleanup.yml
 
 ## What To Send
 

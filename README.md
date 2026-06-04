@@ -16,6 +16,10 @@ Fast scope checker:
 
 https://didixyy.github.io/remote-freelancer-first-sale-kit/scope-checker.html
 
+CSV cleanup checklist:
+
+https://didixyy.github.io/csv-cleanup-service-10usd/csv-cleanup-checklist.html
+
 Payment link for confirmed fixed-scope work:
 
 https://paypal.me/yp1233/10USD

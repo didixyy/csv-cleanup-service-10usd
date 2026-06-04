@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CSV Cleanup Checklist Before Import</title>
+  <meta name="description" content="A practical CSV cleanup checklist for small product, order export, invoice, and contact files. Use the free checklist, then order fixed-scope 10 USD cleanup if needed.">
+  <link rel="canonical" href="https://didixyy.github.io/csv-cleanup-service-10usd/csv-cleanup-checklist.html">
+  <link rel="icon" href="data:,">
+  <meta property="og:title" content="CSV Cleanup Checklist Before Import">
+  <meta property="og:description" content="Check headers, spacing, blank rows, duplicate rows, required fields, and safe cleanup scope before importing or sharing a CSV file.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://didixyy.github.io/csv-cleanup-service-10usd/csv-cleanup-checklist.html">
+  <style>
+    :root {
+      --ink: #132029;
+      --muted: #4f5f68;
+      --line: #d9e2e7;
+      --paper: #ffffff;
+      --soft: #edf6f2;
+      --accent: #0f766e;
+      --accent-strong: #0a514b;
+      --warning: #985b18;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.55;
+    }
+    a {
+      color: var(--accent-strong);
+    }
+    .wrap {
+      width: min(1040px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+    header,
+    section {
+      padding: 38px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    header,
+    .soft {
+      background: var(--soft);
+    }
+    nav,
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+    }
+    nav {
+      margin-bottom: 24px;
+    }
+    h1 {
+      max-width: 860px;
+      margin: 0;
+      font-size: clamp(34px, 6vw, 58px);
+      line-height: 1.05;
+      letter-spacing: 0;
+    }
+    h2 {
+      margin: 0 0 14px;
+      font-size: 28px;
+      letter-spacing: 0;
+    }
+    p {
+      max-width: 780px;
+      margin: 12px 0 0;
+      color: var(--muted);
+      font-size: 18px;
+    }
+    .button,
+    .secondary-button {
+      display: inline-flex;
+      min-height: 44px;
+      align-items: center;
+      justify-content: center;
+      padding: 11px 16px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .button {
+      color: #fff;
+      background: var(--accent);
+      border: 1px solid var(--accent);
+    }
+    .secondary-button {
+      color: var(--accent-strong);
+      background: #fff;
+      border: 1px solid var(--accent);
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+    .item {
+      min-height: 150px;
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+    }
+    .item strong {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--ink);
+    }
+    .item span {
+      color: var(--muted);
+    }
+    .split {
+      display: grid;
+      grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+      gap: 32px;
+      align-items: start;
+    }
+    ol,
+    ul {
+      margin: 0;
+      padding-left: 20px;
+      color: var(--muted);
+      font-size: 17px;
+    }
+    li + li {
+      margin-top: 8px;
+    }
+    .warning {
+      color: var(--warning);
+      font-weight: 700;
+    }
+    footer {
+      padding: 28px 0 42px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    @media (max-width: 760px) {
+      .wrap {
+        width: min(100% - 28px, 1040px);
+      }
+      .split {
+        grid-template-columns: 1fr;
+      }
+      .button,
+      .secondary-button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <nav>
+        <a class="secondary-button" href="index.html">10 USD service</a>
+        <a class="secondary-button" href="https://didixyy.github.io/remote-freelancer-first-sale-kit/scope-checker.html">Scope checker</a>
+        <a class="secondary-button" href="https://didixyy.github.io/remote-freelancer-first-sale-kit/csv-cleanup-delivery-example.html">Sample delivery</a>
+        <a class="secondary-button" href="https://github.com/didixyy/remote-freelancer-first-sale-kit/issues/new?template=csv-cleanup.yml">Request form</a>
+      </nav>
+      <h1>CSV Cleanup Checklist Before Import</h1>
+      <p>Use this checklist before importing, sharing, or reviewing a small CSV file. If the file is one CSV or Excel file up to 300 rows and 12 columns, fixed-scope cleanup is available for 10 USD.</p>
+      <div class="actions" style="margin-top: 18px;">
+        <a class="button" href="https://paypal.me/yp1233/10USD">Pay 10 USD now</a>
+        <a class="secondary-button" href="https://didixyy.github.io/csv-cleanup-service-10usd/">Open service page</a>
+        <a class="secondary-button" href="mailto:331596501@qq.com?subject=CSV%20cleanup%20checklist%20question">Email cleanup question</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <div class="wrap">
+        <h2>Quick checklist</h2>
+        <div class="grid">
+          <div class="item"><strong>Headers are readable</strong><span>Use clear names such as sku, product_name, price_usd, order_id, customer_email, invoice_id, or contact_name.</span></div>
+          <div class="item"><strong>Spacing is trimmed</strong><span>Remove leading and trailing spaces in headers and visible text fields before import.</span></div>
+          <div class="item"><strong>Blank rows are removed</strong><span>Delete empty rows that can create false records or stop a simple import.</span></div>
+          <div class="item"><strong>Duplicate rows are reviewed</strong><span>Check exact duplicate rows and keep only the rows that should remain.</span></div>
+          <div class="item"><strong>Required fields are visible</strong><span>Confirm IDs, names, prices, dates, email columns, and status fields are present before sending the file.</span></div>
+          <div class="item"><strong>Original meaning is preserved</strong><span>Do not rewrite values, infer missing data, or change numbers unless the rule is explicit.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="soft">
+      <div class="wrap split">
+        <div>
+          <h2>When the 10 USD cleanup fits</h2>
+          <p>The fixed starter scope is for visible cleanup of a small file. It is a good fit when the file is understandable but messy.</p>
+        </div>
+        <ul>
+          <li>One CSV or Excel file.</li>
+          <li>Up to 300 rows and 12 columns.</li>
+          <li>Readable but inconsistent headers.</li>
+          <li>Extra spaces, blank rows, or obvious duplicate rows.</li>
+          <li>A short delivery note is enough to explain the changes.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap split">
+        <div>
+          <h2>Order path</h2>
+          <p>Include the Payment sender email in the brief if you already paid. It is used only to match a visible PayPal payment to the request.</p>
+        </div>
+        <ol>
+          <li>Check the row and column count with the <a href="https://didixyy.github.io/remote-freelancer-first-sale-kit/scope-checker.html">scope checker</a>.</li>
+          <li>Review the <a href="https://didixyy.github.io/remote-freelancer-first-sale-kit/csv-cleanup-delivery-example.html">sample delivery page</a>.</li>
+          <li>Pay 10 USD through <a href="https://paypal.me/yp1233/10USD">PayPal.Me</a> only when the file fits.</li>
+          <li>Submit the <a href="https://github.com/didixyy/remote-freelancer-first-sale-kit/issues/new?template=csv-cleanup.yml">CSV cleanup request form</a>.</li>
+          <li>Include file type, row count, column count, cleanup type, what to clean, what not to change, and Payment sender email.</li>
+        </ol>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap split">
+        <div>
+          <h2>Do not use this for</h2>
+          <p class="warning">If the file is larger or the cleanup rule is unclear, submit the request form before paying.</p>
+          <p>No accounting, tax, legal, investment, audit, import troubleshooting, research, or data-verification work is included.</p>
+        </div>
+        <ul>
+          <li>Accounting, tax, legal, investment, or audit work.</li>
+          <li>Import troubleshooting or platform approval.</li>
+          <li>Research, data verification, enrichment, or guessing missing values.</li>
+          <li>Guaranteed income, sales lift, shipping result, or payment dispute result.</li>
+          <li>Private credentials, bank details, card data, passwords, or platform logins.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">Contact: 331596501@qq.com. Fixed-scope payment link: https://paypal.me/yp1233/10USD</div>
+  </footer>
+</body>
+</html>

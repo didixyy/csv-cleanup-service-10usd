@@ -40,6 +40,10 @@ CSV cleanup brief builder:
 
 https://didixyy.github.io/csv-cleanup-service-10usd/csv-cleanup-brief-builder.html
 
+Paid 10 USD CSV cleanup order page:
+
+https://didixyy.github.io/csv-cleanup-service-10usd/paid-csv-cleanup-order.html
+
 Scope checker:
 
 https://didixyy.github.io/remote-freelancer-first-sale-kit/scope-checker.html

@@ -28,6 +28,10 @@ Free CSV header cleanup tool:
 
 https://didixyy.github.io/csv-cleanup-service-10usd/free-csv-header-cleanup-tool.html
 
+Free CSV duplicate row checker:
+
+https://didixyy.github.io/csv-cleanup-service-10usd/free-csv-duplicate-row-checker.html
+
 CSV cleanup brief builder:
 
 https://didixyy.github.io/csv-cleanup-service-10usd/csv-cleanup-brief-builder.html
@@ -58,6 +62,7 @@ Contact email:
 - Leading and trailing spaces are trimmed.
 - Blank rows are removed.
 - Exact duplicate rows are reviewed.
+- Exact duplicate rows are checked with the free CSV duplicate row checker if manual cleanup is not needed.
 - Required fields are visible.
 - Original meaning is preserved.
 - File size is within 300 rows and 12 columns.

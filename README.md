@@ -24,6 +24,10 @@ Free CSV header cleanup tool:
 
 https://didixyy.github.io/csv-cleanup-service-10usd/free-csv-header-cleanup-tool.html
 
+Free CSV duplicate row checker:
+
+https://didixyy.github.io/csv-cleanup-service-10usd/free-csv-duplicate-row-checker.html
+
 Shopify and WooCommerce product CSV cleanup:
 
 https://didixyy.github.io/csv-cleanup-service-10usd/shopify-woocommerce-product-csv-cleanup.html
@@ -43,6 +47,10 @@ https://didixyy.github.io/csv-cleanup-service-10usd/email-list-csv-cleanup.html
 Free CSV header cleanup tool:
 
 https://didixyy.github.io/csv-cleanup-service-10usd/free-csv-header-cleanup-tool.html
+
+Free CSV duplicate row checker:
+
+https://didixyy.github.io/csv-cleanup-service-10usd/free-csv-duplicate-row-checker.html
 
 CSV cleanup brief builder:
 

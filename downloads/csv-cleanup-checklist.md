@@ -44,6 +44,10 @@ Paid 10 USD CSV cleanup order page:
 
 https://didixyy.github.io/csv-cleanup-service-10usd/paid-csv-cleanup-order.html
 
+Paid order brief release:
+
+https://github.com/didixyy/csv-cleanup-service-10usd/releases/tag/paid-csv-cleanup-order-v1
+
 Scope checker:
 
 https://didixyy.github.io/remote-freelancer-first-sale-kit/scope-checker.html

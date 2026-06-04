@@ -131,6 +131,10 @@
       text-decoration: none;
       white-space: nowrap;
     }
+    button.button,
+    button.secondary-button {
+      font: inherit;
+    }
     .nav-row a {
       color: #fff;
       border: 1px solid rgba(255, 255, 255, 0.72);
@@ -243,6 +247,11 @@
       word-break: break-word;
       font: 15px/1.55 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
     }
+    .field-note {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 14px;
+    }
     .warning {
       color: var(--warning);
       font-weight: 700;
@@ -329,10 +338,13 @@
           <p>Payment sender email is required because PayPal payment visibility must be checked manually. Work starts only after the paid brief and visible payment match.</p>
           <div class="actions" style="margin-top: 16px;">
             <a class="button" href="https://github.com/didixyy/csv-cleanup-service-10usd/issues/new?template=csv-cleanup.yml">Open CSV request form</a>
+            <button id="copyPaidBrief" class="secondary-button" type="button">Copy paid brief</button>
             <a class="secondary-button" href="mailto:331596501@qq.com?subject=Paid%2010%20USD%20CSV%20cleanup&body=Hi%2C%20I%20paid%20for%20a%2010%20USD%20CSV%20cleanup%20that%20fits%20the%20fixed%20starter%20scope.%0A%0APayment%20sender%20email%3A%0AFile%20type%3A%0ARow%20count%3A%0AColumn%20count%3A%0AWhat%20should%20be%20cleaned%3A%0AWhat%20must%20not%20be%20changed%3A%0AExpected%20result%3A%0A">Email paid brief</a>
+            <a class="secondary-button" href="https://github.com/didixyy/csv-cleanup-service-10usd/releases/tag/paid-csv-cleanup-order-v1">Download brief</a>
           </div>
+          <p id="copyStatus" class="field-note" aria-live="polite">Copy the paid brief, paste it into the request form, then include the Payment sender email.</p>
         </div>
-        <pre class="brief">Payment sender email:
+        <pre id="paidBriefText" class="brief">Payment sender email:
 File type:
 Row count:
 Column count:
@@ -386,6 +398,7 @@ https://didixyy.github.io/remote-freelancer-first-sale-kit/csv-cleanup-delivery-
           <div class="item"><strong>Sample delivery</strong><span>Review the cleaned file shape and short delivery note before ordering.</span><div class="actions" style="margin-top: 12px;"><a class="secondary-button" href="https://didixyy.github.io/remote-freelancer-first-sale-kit/csv-cleanup-delivery-example.html">View sample</a></div></div>
           <div class="item"><strong>Free cleanup audit</strong><span>Paste a small CSV sample and check rows, columns, blank rows, duplicate rows, headers, and fixed-scope fit.</span><div class="actions" style="margin-top: 12px;"><a class="secondary-button" href="free-csv-cleanup-audit.html">Run audit</a></div></div>
           <div class="item"><strong>Brief builder</strong><span>Generate a clear fixed-scope request with row count, column count, cleanup type, and Payment sender email.</span><div class="actions" style="margin-top: 12px;"><a class="secondary-button" href="csv-cleanup-brief-builder.html">Build brief</a></div></div>
+          <div class="item"><strong>Downloadable paid brief</strong><span>Use the release asset as a simple paid-order template before opening the CSV request form.</span><div class="actions" style="margin-top: 12px;"><a class="secondary-button" href="https://github.com/didixyy/csv-cleanup-service-10usd/releases/tag/paid-csv-cleanup-order-v1">Download brief</a></div></div>
           <div class="item"><strong>Free checklist</strong><span>Check headers, spacing, blank rows, required fields, and duplicate rows before opening the request.</span><div class="actions" style="margin-top: 12px;"><a class="secondary-button" href="csv-cleanup-checklist.html">Open checklist</a></div></div>
         </div>
       </div>
@@ -395,5 +408,28 @@ https://didixyy.github.io/remote-freelancer-first-sale-kit/csv-cleanup-delivery-
   <footer>
     <div class="wrap">Contact: 331596501@qq.com. Fixed-scope payment link: https://paypal.me/yp1233/10USD. CSV request form: https://github.com/didixyy/csv-cleanup-service-10usd/issues/new?template=csv-cleanup.yml</div>
   </footer>
+  <script>
+    const copyButton = document.getElementById("copyPaidBrief");
+    const paidBriefText = document.getElementById("paidBriefText");
+    const copyStatus = document.getElementById("copyStatus");
+
+    async function copyPaidBrief() {
+      const text = paidBriefText.textContent.trim();
+
+      try {
+        await navigator.clipboard.writeText(text);
+        copyStatus.textContent = "Paid brief copied. Paste it into the CSV request form and include the Payment sender email.";
+      } catch (error) {
+        const selection = window.getSelection();
+        const range = document.createRange();
+        range.selectNodeContents(paidBriefText);
+        selection.removeAllRanges();
+        selection.addRange(range);
+        copyStatus.textContent = "Clipboard access was unavailable. The paid brief is selected for copying.";
+      }
+    }
+
+    copyButton.addEventListener("click", copyPaidBrief);
+  </script>
 </body>
 </html>

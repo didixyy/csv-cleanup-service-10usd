@@ -20,6 +20,10 @@ Invoice and contact CSV cleanup:
 
 https://didixyy.github.io/csv-cleanup-service-10usd/invoice-contact-csv-cleanup.html
 
+Email list CSV cleanup:
+
+https://didixyy.github.io/csv-cleanup-service-10usd/email-list-csv-cleanup.html
+
 Scope checker:
 
 https://didixyy.github.io/remote-freelancer-first-sale-kit/scope-checker.html
@@ -82,6 +86,18 @@ Invoice and contact CSV:
 - invoice_id
 - due_date
 - payment_status
+
+Email list CSV:
+
+- email
+- first_name
+- last_name
+- company_name
+- tag
+- segment
+- source
+- signup_date
+- subscription_status
 
 ## When The 10 USD Cleanup Fits
 

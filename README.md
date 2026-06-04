@@ -32,6 +32,10 @@ Invoice and contact CSV cleanup:
 
 https://didixyy.github.io/csv-cleanup-service-10usd/invoice-contact-csv-cleanup.html
 
+Email list CSV cleanup:
+
+https://didixyy.github.io/csv-cleanup-service-10usd/email-list-csv-cleanup.html
+
 Downloadable checklist release:
 
 https://github.com/didixyy/csv-cleanup-service-10usd/releases/tag/csv-cleanup-checklist-v1
@@ -96,6 +100,10 @@ https://didixyy.github.io/csv-cleanup-service-10usd/order-export-csv-cleanup.htm
 Invoice and contact CSV cleanup:
 
 https://didixyy.github.io/csv-cleanup-service-10usd/invoice-contact-csv-cleanup.html
+
+Email list CSV cleanup:
+
+https://didixyy.github.io/csv-cleanup-service-10usd/email-list-csv-cleanup.html
 
 Public order desk:
 

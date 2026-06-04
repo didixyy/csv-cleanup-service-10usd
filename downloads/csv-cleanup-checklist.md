@@ -24,6 +24,10 @@ Email list CSV cleanup:
 
 https://didixyy.github.io/csv-cleanup-service-10usd/email-list-csv-cleanup.html
 
+Free CSV cleanup audit:
+
+https://didixyy.github.io/csv-cleanup-service-10usd/free-csv-cleanup-audit.html
+
 Free CSV header cleanup tool:
 
 https://didixyy.github.io/csv-cleanup-service-10usd/free-csv-header-cleanup-tool.html
@@ -59,6 +63,7 @@ Contact email:
 ## Quick Checklist
 
 - Headers are readable.
+- A small sample is checked with the free CSV cleanup audit if the file needs a quick review before ordering.
 - Leading and trailing spaces are trimmed.
 - Blank rows are removed.
 - Exact duplicate rows are reviewed.

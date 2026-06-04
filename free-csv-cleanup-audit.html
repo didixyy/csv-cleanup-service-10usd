@@ -3,14 +3,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Free CSV Duplicate Row Checker for Small CSV Files</title>
-  <meta name="description" content="Paste a small CSV sample, find exact duplicate rows, check whether the file fits the fixed 10 USD CSV cleanup scope, and prepare the next request step.">
-  <link rel="canonical" href="https://didixyy.github.io/csv-cleanup-service-10usd/free-csv-duplicate-row-checker.html">
+  <title>Free CSV Cleanup Audit for Small CSV Files</title>
+  <meta name="description" content="Paste a small CSV sample, check rows, columns, blank rows, exact duplicate rows, messy headers, fixed 10 USD scope, and prepare a cleanup request.">
+  <link rel="canonical" href="https://didixyy.github.io/csv-cleanup-service-10usd/free-csv-cleanup-audit.html">
   <link rel="icon" href="data:,">
-  <meta property="og:title" content="Free CSV Duplicate Row Checker for Small CSV Files">
-  <meta property="og:description" content="Find exact duplicate rows in a small CSV sample and decide whether the file fits the 10 USD fixed-scope CSV cleanup path.">
+  <meta property="og:title" content="Free CSV Cleanup Audit for Small CSV Files">
+  <meta property="og:description" content="Run a browser-only CSV cleanup audit before ordering fixed-scope 10 USD manual cleanup.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://didixyy.github.io/csv-cleanup-service-10usd/free-csv-duplicate-row-checker.html">
+  <meta property="og:url" content="https://didixyy.github.io/csv-cleanup-service-10usd/free-csv-cleanup-audit.html">
   <style>
     :root {
       --ink: #132029;
@@ -60,7 +60,7 @@
       margin-bottom: 24px;
     }
     h1 {
-      max-width: 920px;
+      max-width: 900px;
       margin: 0;
       font-size: clamp(34px, 6vw, 58px);
       line-height: 1.05;
@@ -152,7 +152,7 @@
       font: inherit;
     }
     textarea {
-      min-height: 240px;
+      min-height: 250px;
       resize: vertical;
     }
     .check-row {
@@ -194,7 +194,7 @@
     }
     pre {
       overflow-x: auto;
-      min-height: 380px;
+      min-height: 400px;
       margin: 0;
       padding: 16px;
       border: 1px solid var(--line);
@@ -230,20 +230,20 @@
       <nav>
         <a class="secondary-button" href="index.html">10 USD service</a>
         <a class="secondary-button" href="csv-cleanup-checklist.html">Cleanup checklist</a>
-        <a class="secondary-button" href="free-csv-cleanup-audit.html">CSV cleanup audit</a>
         <a class="secondary-button" href="free-csv-header-cleanup-tool.html">Header cleanup tool</a>
+        <a class="secondary-button" href="free-csv-duplicate-row-checker.html">Duplicate row checker</a>
         <a class="secondary-button" href="csv-cleanup-brief-builder.html">Brief builder</a>
         <a class="secondary-button" href="https://didixyy.github.io/remote-freelancer-first-sale-kit/scope-checker.html">Scope checker</a>
         <a class="secondary-button" href="https://didixyy.github.io/remote-freelancer-first-sale-kit/csv-cleanup-delivery-example.html">Sample delivery</a>
         <a class="secondary-button" href="https://github.com/didixyy/csv-cleanup-service-10usd/issues/new?template=csv-cleanup.yml">Request form</a>
         <a class="secondary-button" href="https://github.com/didixyy/csv-cleanup-service-10usd/issues/1">Order desk</a>
       </nav>
-      <h1>Free CSV Duplicate Row Checker for Small CSV Files</h1>
-      <p>Paste a small CSV sample to find exact duplicate rows. The result stays in this browser and can be copied into a 10 USD cleanup request if the file needs manual review.</p>
+      <h1>Free CSV Cleanup Audit for Small CSV Files</h1>
+      <p>Paste a small CSV sample to check rows, columns, blank rows, exact duplicate rows, messy headers, and fixed 10 USD scope before opening a cleanup request.</p>
       <div class="actions" style="margin-top: 18px;">
         <a class="button" href="https://paypal.me/yp1233/10USD">Pay 10 USD now</a>
         <a class="secondary-button" href="https://github.com/didixyy/csv-cleanup-service-10usd/issues/new?template=csv-cleanup.yml">Open request form</a>
-        <a class="secondary-button" href="https://gist.github.com/didixyy/7c48ffebb6dd7dd9972be6f77c1be7d2">Public Gist</a>
+        <a class="secondary-button" href="https://gist.github.com/didixyy/84da3fad673fdac4242838912e5a63d2">Public Gist</a>
       </div>
     </div>
   </header>
@@ -252,8 +252,8 @@
     <section>
       <div class="wrap split">
         <div>
-          <h2>Find exact duplicates</h2>
-          <p>This helper checks repeated rows after trimming extra spaces around each cell. It does not decide business meaning, accounting, compliance, customer identity, or which row should be kept.</p>
+          <h2>Run the audit</h2>
+          <p>This browser-only audit checks a sample and creates a copyable summary. It does not verify business meaning, import success, customer identity, compliance, or which row should be kept.</p>
           <div id="scopeStatus" class="status status-review">Paste CSV rows and enter row count to check the fixed scope.</div>
           <div class="grid">
             <div class="panel">
@@ -279,7 +279,7 @@
         </div>
         <div class="panel">
           <label for="csvInput">CSV sample</label>
-          <textarea id="csvInput" placeholder="Example:&#10;email,name,status&#10;a@example.com,Ada,active&#10;b@example.com,Ben,active&#10;a@example.com,Ada,active"></textarea>
+          <textarea id="csvInput" placeholder="Example:&#10;email,name,status&#10;a@example.com,Ada,active&#10;&#10;b@example.com,Ben,active&#10;a@example.com,Ada,active"></textarea>
           <div class="field-note">Paste a small sample only. Keep private credentials, bank details, card data, passwords, and platform logins out.</div>
         </div>
       </div>
@@ -288,15 +288,16 @@
     <section class="soft">
       <div class="wrap split">
         <div>
-          <h2>Copyable result</h2>
-          <p>Copy the duplicate summary into the request form when the file needs manual cleanup, duplicate review, or a delivery note.</p>
+          <h2>Copyable audit</h2>
+          <p>Copy this audit into the request form when the full file needs manual cleanup, duplicate review, blank row cleanup, readable headers, or a delivery note.</p>
           <div class="actions" style="margin-top: 16px;">
-            <button id="copyResult" class="button" type="button">Copy result</button>
+            <button id="copyResult" class="button" type="button">Copy audit</button>
             <a class="secondary-button" href="csv-cleanup-brief-builder.html">Build request brief</a>
-            <a class="secondary-button" href="free-csv-header-cleanup-tool.html">Clean headers first</a>
+            <a class="secondary-button" href="free-csv-header-cleanup-tool.html">Clean headers</a>
+            <a class="secondary-button" href="free-csv-duplicate-row-checker.html">Check duplicates</a>
             <a class="secondary-button" href="https://github.com/didixyy/csv-cleanup-service-10usd/issues/new?template=csv-cleanup.yml">Open request form</a>
           </div>
-          <p id="copyStatus" class="field-note" aria-live="polite">Result updates automatically as you type.</p>
+          <p id="copyStatus" class="field-note" aria-live="polite">Audit updates automatically as you type.</p>
         </div>
         <pre id="resultOutput" tabindex="0"></pre>
       </div>
@@ -306,8 +307,8 @@
       <div class="wrap">
         <h2>When to order manual cleanup</h2>
         <div class="grid">
-          <div class="item"><strong>Use the free checker</strong><span>When you only need to see whether a sample contains exact repeated rows.</span></div>
-          <div class="item"><strong>Order the 10 USD cleanup</strong><span>When you need duplicate review, spacing cleanup, blank row cleanup, readable headers, and a short delivery note for the full file.</span></div>
+          <div class="item"><strong>Use the free audit</strong><span>When you need a quick browser-only check of a small CSV sample before deciding what to request.</span></div>
+          <div class="item"><strong>Order the 10 USD cleanup</strong><span>When the full file needs spacing cleanup, blank row cleanup, obvious duplicate review, readable headers, and a short delivery note.</span></div>
           <div class="item"><strong>Payment match</strong><span>After paying through PayPal.Me, include the Payment sender email in the request so the payment can be matched manually.</span></div>
           <div class="item"><strong>Not included</strong><span>No accounting, tax, legal, investment, audit, import troubleshooting, research, data-verification, shipping result, email delivery result, marketing result, compliance result, payment dispute result, or platform login work.</span></div>
         </div>
@@ -371,26 +372,21 @@
     }
 
     function parseRows(text) {
-      return text
-        .split(/\r?\n/)
-        .map((line) => line.trim())
-        .filter(Boolean)
-        .map((line, index) => ({
-          lineNumber: index + 1,
-          cells: parseCsvLine(line)
-        }));
+      return text.split(/\r?\n/).map((line, index) => ({
+        isBlank: line.trim() === "",
+        lineNumber: index + 1,
+        raw: line,
+        cells: parseCsvLine(line)
+      }));
     }
 
     function rowKey(row) {
       return row.cells.map((cell) => cell.trim()).join("\u001f");
     }
 
-    function displayRow(row) {
-      return row.cells.join(",");
-    }
-
     function findDuplicates(rows, hasHeader) {
-      const dataRows = hasHeader ? rows.slice(1) : rows;
+      const rowsWithContent = rows.filter((row) => !row.isBlank);
+      const dataRows = hasHeader ? rowsWithContent.slice(1) : rowsWithContent;
       const groups = new Map();
 
       dataRows.forEach((row) => {
@@ -402,6 +398,50 @@
       });
 
       return Array.from(groups.values()).filter((group) => group.length > 1);
+    }
+
+    function toWords(value) {
+      return value
+        .replace(/[_-]+/g, " ")
+        .replace(/([a-z])([A-Z])/g, "$1 $2")
+        .replace(/[^A-Za-z0-9]+/g, " ")
+        .replace(/\s+/g, " ")
+        .trim();
+    }
+
+    function auditHeaders(rows, hasHeader) {
+      if (!hasHeader) {
+        return ["No header row selected."];
+      }
+
+      const headerRow = rows.find((row) => !row.isBlank);
+      if (!headerRow) {
+        return ["No header row found."];
+      }
+
+      const seen = new Map();
+      const issues = [];
+      headerRow.cells.forEach((cell, index) => {
+        const trimmed = cell.trim();
+        const readable = toWords(trimmed);
+        const normalized = trimmed.toLowerCase();
+
+        if (!trimmed) {
+          issues.push(`Column ${index + 1}: blank header`);
+        } else if (trimmed !== readable && readable) {
+          issues.push(`Column ${index + 1}: ${trimmed} could be more readable as ${readable}`);
+        }
+
+        if (normalized) {
+          const count = (seen.get(normalized) || 0) + 1;
+          seen.set(normalized, count);
+          if (count > 1) {
+            issues.push(`Column ${index + 1}: duplicate header ${trimmed}`);
+          }
+        }
+      });
+
+      return issues.length ? issues : ["No obvious header issues found in the pasted sample."];
     }
 
     function updateStatus(rowCount, columnCount, detectedRows, detectedColumns) {
@@ -428,12 +468,15 @@
 
     function buildResult() {
       const rows = parseRows(fields.csvInput.value);
+      const rowsWithContent = rows.filter((row) => !row.isBlank);
+      const blankRows = rows.filter((row) => row.isBlank).length;
       const rowCount = parseCount(fields.rowCount);
       const columnCount = parseCount(fields.columnCount);
-      const detectedRows = rows.length > 0 ? rows.length : null;
-      const detectedColumns = rows.length > 0 ? Math.max(...rows.map((row) => row.cells.length)) : null;
+      const detectedRows = rows.length > 0 && fields.csvInput.value.trim() ? rows.length : null;
+      const detectedColumns = rowsWithContent.length > 0 ? Math.max(...rowsWithContent.map((row) => row.cells.length)) : null;
       const duplicates = findDuplicates(rows, fields.hasHeader.checked);
       const duplicateRows = duplicates.reduce((total, group) => total + group.length, 0);
+      const headerIssues = auditHeaders(rows, fields.hasHeader.checked);
       const scopeLine = updateStatus(rowCount, columnCount, detectedRows, detectedColumns);
       const paymentEmail = fields.paymentEmail.value.trim() || "Not paid yet / will add after payment";
       const duplicateSummary = duplicates.length === 0
@@ -441,19 +484,24 @@
         : duplicates.flatMap((group, index) => [
             `Group ${index + 1}: ${group.length} matching rows`,
             `Line numbers: ${group.map((row) => row.lineNumber).join(", ")}`,
-            `Row: ${displayRow(group[0])}`,
+            `Row: ${group[0].cells.join(",")}`,
             ""
           ]);
 
       const lines = [
-        "Free CSV duplicate row checker result",
+        "Free CSV cleanup audit result",
         "",
         `Pasted rows: ${detectedRows === null ? "Unknown" : detectedRows}`,
+        `Rows with content: ${rowsWithContent.length || "Unknown"}`,
+        `Blank rows found: ${blankRows}`,
         `Detected columns: ${detectedColumns === null ? "Unknown" : detectedColumns}`,
         `Total row count for full file: ${rowCount === null ? "Unknown" : rowCount}`,
         `Column count used for scope: ${columnCount || detectedColumns || "Unknown"}`,
         `Scope check: ${scopeLine}`,
         `Payment sender email: ${paymentEmail}`,
+        "",
+        "Header audit:",
+        ...headerIssues,
         "",
         `Duplicate groups found: ${duplicates.length}`,
         `Rows inside duplicate groups: ${duplicateRows}`,
@@ -461,14 +509,14 @@
         "Duplicate review:",
         ...duplicateSummary,
         "Next step:",
-        "If the full file needs manual duplicate review, blank row cleanup, spacing cleanup, readable headers, or a short delivery note, use the fixed-scope 10 USD request path.",
+        "If the full file needs manual spacing cleanup, blank row cleanup, obvious duplicate row review, readable headers, or a short delivery note, use the fixed-scope 10 USD request path.",
         "",
         "Useful links:",
         "Payment link: https://paypal.me/yp1233/10USD",
         "Request form: https://github.com/didixyy/csv-cleanup-service-10usd/issues/new?template=csv-cleanup.yml",
-        "CSV cleanup audit: https://didixyy.github.io/csv-cleanup-service-10usd/free-csv-cleanup-audit.html",
         "Brief builder: https://didixyy.github.io/csv-cleanup-service-10usd/csv-cleanup-brief-builder.html",
         "Header cleanup tool: https://didixyy.github.io/csv-cleanup-service-10usd/free-csv-header-cleanup-tool.html",
+        "Duplicate row checker: https://didixyy.github.io/csv-cleanup-service-10usd/free-csv-duplicate-row-checker.html",
         "Sample delivery: https://didixyy.github.io/remote-freelancer-first-sale-kit/csv-cleanup-delivery-example.html",
         "Scope checker: https://didixyy.github.io/remote-freelancer-first-sale-kit/scope-checker.html",
         "",
@@ -483,14 +531,14 @@
 
       try {
         await navigator.clipboard.writeText(text);
-        copyStatus.textContent = "Result copied. Paste it into the request form or email.";
+        copyStatus.textContent = "Audit copied. Paste it into the request form or email.";
       } catch (error) {
         const selection = window.getSelection();
         const range = document.createRange();
         range.selectNodeContents(resultOutput);
         selection.removeAllRanges();
         selection.addRange(range);
-        copyStatus.textContent = "Clipboard access was unavailable. The result text is selected for copying.";
+        copyStatus.textContent = "Clipboard access was unavailable. The audit text is selected for copying.";
       }
     }
 

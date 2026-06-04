@@ -12,6 +12,10 @@ Shopify and WooCommerce product CSV cleanup:
 
 https://didixyy.github.io/csv-cleanup-service-10usd/shopify-woocommerce-product-csv-cleanup.html
 
+Order export CSV cleanup:
+
+https://didixyy.github.io/csv-cleanup-service-10usd/order-export-csv-cleanup.html
+
 Scope checker:
 
 https://didixyy.github.io/remote-freelancer-first-sale-kit/scope-checker.html

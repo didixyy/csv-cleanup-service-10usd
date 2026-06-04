@@ -20,6 +20,10 @@ CSV cleanup request form:
 
 https://github.com/didixyy/csv-cleanup-service-10usd/issues/new?template=csv-cleanup.yml
 
+Focused order desk:
+
+https://github.com/didixyy/csv-cleanup-service-10usd/issues/1
+
 Contact email:
 
 331596501@qq.com

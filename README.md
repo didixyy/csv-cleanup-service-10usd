@@ -89,6 +89,10 @@ Focused repo request form:
 
 https://github.com/didixyy/csv-cleanup-service-10usd/issues/new?template=csv-cleanup.yml
 
+Focused order desk:
+
+https://github.com/didixyy/csv-cleanup-service-10usd/issues/1
+
 ## What To Send
 
 When opening the request form or emailing the brief, include:

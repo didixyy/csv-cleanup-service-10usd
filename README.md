@@ -20,6 +20,10 @@ CSV cleanup checklist:
 
 https://didixyy.github.io/csv-cleanup-service-10usd/csv-cleanup-checklist.html
 
+Shopify and WooCommerce product CSV cleanup:
+
+https://didixyy.github.io/csv-cleanup-service-10usd/shopify-woocommerce-product-csv-cleanup.html
+
 Downloadable checklist release:
 
 https://github.com/didixyy/csv-cleanup-service-10usd/releases/tag/csv-cleanup-checklist-v1
@@ -72,6 +76,10 @@ https://didixyy.github.io/remote-freelancer-first-sale-kit/csv-cleanup-examples.
 Product CSV cleanup:
 
 https://didixyy.github.io/remote-freelancer-first-sale-kit/product-csv-cleanup.html
+
+Shopify and WooCommerce product CSV cleanup:
+
+https://didixyy.github.io/csv-cleanup-service-10usd/shopify-woocommerce-product-csv-cleanup.html
 
 Order export CSV cleanup:
 

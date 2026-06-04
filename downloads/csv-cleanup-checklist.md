@@ -8,6 +8,10 @@ Service page:
 
 https://didixyy.github.io/csv-cleanup-service-10usd/
 
+Shopify and WooCommerce product CSV cleanup:
+
+https://didixyy.github.io/csv-cleanup-service-10usd/shopify-woocommerce-product-csv-cleanup.html
+
 Scope checker:
 
 https://didixyy.github.io/remote-freelancer-first-sale-kit/scope-checker.html
@@ -44,9 +48,13 @@ Contact email:
 Product CSV:
 
 - sku
+- handle
 - product_name
+- title
 - category
 - price_usd
+- inventory
+- variant_option
 - stock_status
 
 Order export CSV:

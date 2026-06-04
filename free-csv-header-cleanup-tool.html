@@ -1,0 +1,526 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Free CSV Header Cleanup Tool for Small CSV Files</title>
+  <meta name="description" content="Clean messy CSV column names into readable headers, check whether a small file fits the fixed 10 USD CSV cleanup scope, and prepare the next request step.">
+  <link rel="canonical" href="https://didixyy.github.io/csv-cleanup-service-10usd/free-csv-header-cleanup-tool.html">
+  <link rel="icon" href="data:,">
+  <meta property="og:title" content="Free CSV Header Cleanup Tool for Small CSV Files">
+  <meta property="og:description" content="Paste a header row, clean column labels, copy the result, and decide whether the file fits the 10 USD fixed-scope CSV cleanup path.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://didixyy.github.io/csv-cleanup-service-10usd/free-csv-header-cleanup-tool.html">
+  <style>
+    :root {
+      --ink: #132029;
+      --muted: #4f5f68;
+      --line: #d9e2e7;
+      --paper: #ffffff;
+      --soft: #edf6f2;
+      --accent: #0f766e;
+      --accent-strong: #0a514b;
+      --warning: #985b18;
+      --danger: #9f1d1d;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.55;
+    }
+    a {
+      color: var(--accent-strong);
+    }
+    .wrap {
+      width: min(1080px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+    header,
+    section {
+      padding: 38px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    header,
+    .soft {
+      background: var(--soft);
+    }
+    nav,
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+    }
+    nav {
+      margin-bottom: 24px;
+    }
+    h1 {
+      max-width: 900px;
+      margin: 0;
+      font-size: clamp(34px, 6vw, 58px);
+      line-height: 1.05;
+      letter-spacing: 0;
+    }
+    h2 {
+      margin: 0 0 14px;
+      font-size: 28px;
+      letter-spacing: 0;
+    }
+    p {
+      max-width: 800px;
+      margin: 12px 0 0;
+      color: var(--muted);
+      font-size: 18px;
+    }
+    .button,
+    .secondary-button {
+      display: inline-flex;
+      min-height: 44px;
+      align-items: center;
+      justify-content: center;
+      padding: 11px 16px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .button {
+      color: #fff;
+      background: var(--accent);
+      border: 1px solid var(--accent);
+    }
+    .secondary-button {
+      color: var(--accent-strong);
+      background: #fff;
+      border: 1px solid var(--accent);
+    }
+    button.button,
+    button.secondary-button {
+      font-family: inherit;
+      font-size: 16px;
+    }
+    .split {
+      display: grid;
+      grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+      gap: 32px;
+      align-items: start;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+    .item,
+    .panel {
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+    }
+    .item {
+      min-height: 136px;
+    }
+    .item strong {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--ink);
+    }
+    .item span {
+      color: var(--muted);
+    }
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 700;
+      color: var(--ink);
+    }
+    input,
+    select,
+    textarea {
+      width: 100%;
+      min-height: 44px;
+      padding: 10px 12px;
+      border: 1px solid #b9c8cf;
+      border-radius: 6px;
+      color: var(--ink);
+      background: #fff;
+      font: inherit;
+    }
+    textarea {
+      min-height: 210px;
+      resize: vertical;
+    }
+    .field-note {
+      margin-top: 5px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .status {
+      margin-top: 16px;
+      padding: 14px 16px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      font-weight: 700;
+    }
+    .status-fit {
+      border-color: var(--accent);
+      color: var(--accent-strong);
+    }
+    .status-review {
+      border-color: var(--warning);
+      color: var(--warning);
+    }
+    .status-blocked {
+      border-color: var(--danger);
+      color: var(--danger);
+    }
+    pre {
+      overflow-x: auto;
+      min-height: 360px;
+      margin: 0;
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      color: var(--ink);
+      background: #f8fbfa;
+      white-space: pre-wrap;
+      word-break: break-word;
+      font: 15px/1.55 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    }
+    footer {
+      padding: 28px 0 42px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    @media (max-width: 760px) {
+      .wrap {
+        width: min(100% - 28px, 1080px);
+      }
+      .split {
+        grid-template-columns: 1fr;
+      }
+      .button,
+      .secondary-button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <nav>
+        <a class="secondary-button" href="index.html">10 USD service</a>
+        <a class="secondary-button" href="csv-cleanup-checklist.html">Cleanup checklist</a>
+        <a class="secondary-button" href="csv-cleanup-brief-builder.html">Brief builder</a>
+        <a class="secondary-button" href="email-list-csv-cleanup.html">Email list CSV</a>
+        <a class="secondary-button" href="https://didixyy.github.io/remote-freelancer-first-sale-kit/scope-checker.html">Scope checker</a>
+        <a class="secondary-button" href="https://didixyy.github.io/remote-freelancer-first-sale-kit/csv-cleanup-delivery-example.html">Sample delivery</a>
+        <a class="secondary-button" href="https://github.com/didixyy/csv-cleanup-service-10usd/issues/new?template=csv-cleanup.yml">Request form</a>
+        <a class="secondary-button" href="https://github.com/didixyy/csv-cleanup-service-10usd/issues/1">Order desk</a>
+      </nav>
+      <h1>Free CSV Header Cleanup Tool for Small CSV Files</h1>
+      <p>Paste a header row or a list of column names. The tool trims spacing, suggests readable labels, and shows whether the file still fits the fixed 10 USD CSV cleanup boundary.</p>
+      <div class="actions" style="margin-top: 18px;">
+        <a class="button" href="https://paypal.me/yp1233/10USD">Pay 10 USD now</a>
+        <a class="secondary-button" href="https://github.com/didixyy/csv-cleanup-service-10usd/issues/new?template=csv-cleanup.yml">Open request form</a>
+        <a class="secondary-button" href="https://gist.github.com/didixyy/015888c04652cb7fd6831f68533162c7">Public Gist</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <div class="wrap split">
+        <div>
+          <h2>Clean the headers</h2>
+          <p>This browser-only helper is for column names, not private records. Keep passwords, card data, bank details, private credentials, and platform login details out of the pasted text.</p>
+          <div id="scopeStatus" class="status status-review">Paste headers and enter row count to check the fixed scope.</div>
+          <div class="grid">
+            <div class="panel">
+              <label for="rowCount">Row count</label>
+              <input id="rowCount" type="number" min="1" step="1" placeholder="Example: 120">
+              <div class="field-note">Fixed scope is up to 300 rows.</div>
+            </div>
+            <div class="panel">
+              <label for="columnCount">Column count</label>
+              <input id="columnCount" type="number" min="1" step="1" placeholder="Auto from headers">
+              <div class="field-note">Leave blank to use the detected header count.</div>
+            </div>
+            <div class="panel">
+              <label for="styleMode">Output style</label>
+              <select id="styleMode">
+                <option value="readable">Readable labels</option>
+                <option value="snake">snake_case</option>
+                <option value="lower">lowercase labels</option>
+              </select>
+            </div>
+            <div class="panel">
+              <label for="paymentEmail">Payment sender email</label>
+              <input id="paymentEmail" type="email" placeholder="Only if already paid">
+              <div class="field-note">Used only to match a visible PayPal payment.</div>
+            </div>
+          </div>
+        </div>
+        <div class="panel">
+          <label for="headerInput">Header row or column list</label>
+          <textarea id="headerInput" placeholder="Example: Product Name, sku , Price USD, customer email, Order Date"></textarea>
+          <div class="field-note">Use one CSV header row, one tab-separated row, or one column name per line.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="soft">
+      <div class="wrap split">
+        <div>
+          <h2>Copyable result</h2>
+          <p>Use the cleaned headers in your file, or copy the summary into the GitHub request form if you want manual cleanup for the full CSV.</p>
+          <div class="actions" style="margin-top: 16px;">
+            <button id="copyResult" class="button" type="button">Copy result</button>
+            <a class="secondary-button" href="csv-cleanup-brief-builder.html">Build request brief</a>
+            <a class="secondary-button" href="https://github.com/didixyy/csv-cleanup-service-10usd/issues/new?template=csv-cleanup.yml">Open request form</a>
+            <a class="secondary-button" href="mailto:331596501@qq.com?subject=10%20USD%20CSV%20header%20cleanup">Email brief</a>
+          </div>
+          <p id="copyStatus" class="field-note" aria-live="polite">Result updates automatically as you type.</p>
+        </div>
+        <pre id="resultOutput" tabindex="0"></pre>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <h2>When to order manual cleanup</h2>
+        <div class="grid">
+          <div class="item"><strong>Use the free tool</strong><span>When the only problem is messy column names and you can safely update the file yourself.</span></div>
+          <div class="item"><strong>Order the 10 USD cleanup</strong><span>When the file also needs spacing cleanup, blank row cleanup, obvious duplicate row review, and a short delivery note.</span></div>
+          <div class="item"><strong>Payment match</strong><span>After paying through PayPal.Me, include the Payment sender email in the request so the payment can be matched manually.</span></div>
+          <div class="item"><strong>Not included</strong><span>No accounting, tax, legal, investment, audit, import troubleshooting, research, data-verification, shipping result, email delivery result, marketing result, compliance result, payment dispute result, or platform login work.</span></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">Contact: 331596501@qq.com. Fixed-scope payment link: https://paypal.me/yp1233/10USD</div>
+  </footer>
+
+  <script>
+    const fields = {
+      headerInput: document.getElementById("headerInput"),
+      rowCount: document.getElementById("rowCount"),
+      columnCount: document.getElementById("columnCount"),
+      styleMode: document.getElementById("styleMode"),
+      paymentEmail: document.getElementById("paymentEmail")
+    };
+    const resultOutput = document.getElementById("resultOutput");
+    const scopeStatus = document.getElementById("scopeStatus");
+    const copyStatus = document.getElementById("copyStatus");
+    const copyButton = document.getElementById("copyResult");
+
+    function parseCount(field) {
+      const value = Number.parseInt(field.value, 10);
+      return Number.isFinite(value) && value > 0 ? value : null;
+    }
+
+    function parseDelimitedLine(line) {
+      const values = [];
+      let value = "";
+      let inQuotes = false;
+
+      for (let index = 0; index < line.length; index += 1) {
+        const character = line[index];
+        const nextCharacter = line[index + 1];
+
+        if (character === '"' && inQuotes && nextCharacter === '"') {
+          value += '"';
+          index += 1;
+          continue;
+        }
+
+        if (character === '"') {
+          inQuotes = !inQuotes;
+          continue;
+        }
+
+        if (!inQuotes && (character === "," || character === "\t" || character === ";")) {
+          values.push(value.trim());
+          value = "";
+          continue;
+        }
+
+        value += character;
+      }
+
+      values.push(value.trim());
+      return values;
+    }
+
+    function readHeaders(text) {
+      const lines = text.split(/\r?\n/).map((line) => line.trim()).filter(Boolean);
+      const firstDelimitedLine = lines.find((line) => /[,;\t]/.test(line));
+
+      if (firstDelimitedLine) {
+        return parseDelimitedLine(firstDelimitedLine).filter(Boolean);
+      }
+
+      return lines;
+    }
+
+    function toWords(value) {
+      return value
+        .replace(/[_-]+/g, " ")
+        .replace(/([a-z])([A-Z])/g, "$1 $2")
+        .replace(/[^A-Za-z0-9]+/g, " ")
+        .replace(/\s+/g, " ")
+        .trim();
+    }
+
+    function toReadableLabel(value) {
+      const words = toWords(value).toLowerCase();
+      if (!words) {
+        return "Column";
+      }
+
+      const acronyms = new Set(["api", "crm", "id", "ip", "sku", "url", "usd"]);
+      return words
+        .split(" ")
+        .map((word) => acronyms.has(word) ? word.toUpperCase() : word.replace(/\b[a-z]/g, (letter) => letter.toUpperCase()))
+        .join(" ");
+    }
+
+    function toLowerLabel(value) {
+      const words = toWords(value).toLowerCase();
+      return words || "column";
+    }
+
+    function toSnakeLabel(value) {
+      const words = toWords(value).toLowerCase();
+      return words ? words.replace(/\s+/g, "_") : "column";
+    }
+
+    function cleanHeader(value, styleMode) {
+      if (styleMode === "snake") {
+        return toSnakeLabel(value);
+      }
+
+      if (styleMode === "lower") {
+        return toLowerLabel(value);
+      }
+
+      return toReadableLabel(value);
+    }
+
+    function makeUnique(headers, styleMode) {
+      const seen = new Map();
+
+      return headers.map((header) => {
+        const count = (seen.get(header) || 0) + 1;
+        seen.set(header, count);
+
+        if (count === 1) {
+          return header;
+        }
+
+        return styleMode === "snake" ? `${header}_${count}` : `${header} ${count}`;
+      });
+    }
+
+    function updateStatus(rowCount, columnCount, detectedCount) {
+      const effectiveColumns = columnCount || detectedCount || null;
+      scopeStatus.classList.remove("status-fit", "status-review", "status-blocked");
+
+      if (rowCount === null || effectiveColumns === null) {
+        scopeStatus.textContent = "Paste headers and enter row count to check the fixed scope.";
+        scopeStatus.classList.add("status-review");
+        return "Scope needs row count and column count before payment.";
+      }
+
+      if (rowCount <= 300 && effectiveColumns <= 12) {
+        scopeStatus.textContent = "This appears to fit the fixed 10 USD starter scope.";
+        scopeStatus.classList.add("status-fit");
+        return "Appears to fit the fixed 10 USD scope.";
+      }
+
+      scopeStatus.textContent = "This appears over the fixed 10 USD scope. Submit the request before paying.";
+      scopeStatus.classList.add("status-blocked");
+      return "Over fixed 10 USD scope. Request scope review before paying.";
+    }
+
+    function buildResult() {
+      const rawHeaders = readHeaders(fields.headerInput.value);
+      const styleMode = fields.styleMode.value;
+      const cleanedHeaders = makeUnique(rawHeaders.map((header) => cleanHeader(header, styleMode)), styleMode);
+      const rowCount = parseCount(fields.rowCount);
+      const columnCount = parseCount(fields.columnCount);
+      const detectedCount = cleanedHeaders.length > 0 ? cleanedHeaders.length : null;
+      const effectiveColumns = columnCount || detectedCount;
+      const scopeLine = updateStatus(rowCount, columnCount, detectedCount);
+      const paymentEmail = fields.paymentEmail.value.trim() || "Not paid yet / will add after payment";
+      const previewRows = rawHeaders.length === 0
+        ? ["Paste a header row to see cleaned labels."]
+        : rawHeaders.map((header, index) => `${index + 1}. ${header || "(blank)"} -> ${cleanedHeaders[index]}`);
+
+      const lines = [
+        "Free CSV header cleanup result",
+        "",
+        `Detected columns: ${detectedCount === null ? "Unknown" : detectedCount}`,
+        `Row count: ${rowCount === null ? "Unknown" : rowCount}`,
+        `Column count used for scope: ${effectiveColumns || "Unknown"}`,
+        `Scope check: ${scopeLine}`,
+        `Payment sender email: ${paymentEmail}`,
+        "",
+        "Cleaned header row:",
+        cleanedHeaders.length === 0 ? "Paste headers first." : cleanedHeaders.join(","),
+        "",
+        "Header changes:",
+        ...previewRows,
+        "",
+        "Next step:",
+        "If the file also needs manual spacing cleanup, blank row cleanup, obvious duplicate row review, or a short delivery note, use the fixed-scope 10 USD request path.",
+        "",
+        "Useful links:",
+        "Payment link: https://paypal.me/yp1233/10USD",
+        "Request form: https://github.com/didixyy/csv-cleanup-service-10usd/issues/new?template=csv-cleanup.yml",
+        "Brief builder: https://didixyy.github.io/csv-cleanup-service-10usd/csv-cleanup-brief-builder.html",
+        "Sample delivery: https://didixyy.github.io/remote-freelancer-first-sale-kit/csv-cleanup-delivery-example.html",
+        "Scope checker: https://didixyy.github.io/remote-freelancer-first-sale-kit/scope-checker.html",
+        "",
+        "Private credentials, bank details, card data, passwords, and platform logins are not included."
+      ];
+
+      resultOutput.textContent = lines.join("\n");
+    }
+
+    async function copyResult() {
+      const text = resultOutput.textContent;
+
+      try {
+        await navigator.clipboard.writeText(text);
+        copyStatus.textContent = "Result copied. Paste it into the request form or email.";
+      } catch (error) {
+        const selection = window.getSelection();
+        const range = document.createRange();
+        range.selectNodeContents(resultOutput);
+        selection.removeAllRanges();
+        selection.addRange(range);
+        copyStatus.textContent = "Clipboard access was unavailable. The result text is selected for copying.";
+      }
+    }
+
+    Object.values(fields).forEach((field) => {
+      field.addEventListener("input", buildResult);
+      field.addEventListener("change", buildResult);
+    });
+
+    copyButton.addEventListener("click", copyResult);
+    buildResult();
+  </script>
+</body>
+</html>

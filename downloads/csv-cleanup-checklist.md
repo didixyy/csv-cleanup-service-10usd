@@ -24,6 +24,10 @@ Email list CSV cleanup:
 
 https://didixyy.github.io/csv-cleanup-service-10usd/email-list-csv-cleanup.html
 
+Free CSV header cleanup tool:
+
+https://didixyy.github.io/csv-cleanup-service-10usd/free-csv-header-cleanup-tool.html
+
 CSV cleanup brief builder:
 
 https://didixyy.github.io/csv-cleanup-service-10usd/csv-cleanup-brief-builder.html
@@ -57,6 +61,7 @@ Contact email:
 - Required fields are visible.
 - Original meaning is preserved.
 - File size is within 300 rows and 12 columns.
+- Messy column names are checked with the free CSV header cleanup tool if manual cleanup is not needed.
 - Payment sender email is included if payment was already sent.
 
 ## Common Header Names

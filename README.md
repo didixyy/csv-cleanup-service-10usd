@@ -20,6 +20,10 @@ CSV cleanup checklist:
 
 https://didixyy.github.io/csv-cleanup-service-10usd/csv-cleanup-checklist.html
 
+Free CSV header cleanup tool:
+
+https://didixyy.github.io/csv-cleanup-service-10usd/free-csv-header-cleanup-tool.html
+
 Shopify and WooCommerce product CSV cleanup:
 
 https://didixyy.github.io/csv-cleanup-service-10usd/shopify-woocommerce-product-csv-cleanup.html
@@ -35,6 +39,10 @@ https://didixyy.github.io/csv-cleanup-service-10usd/invoice-contact-csv-cleanup.
 Email list CSV cleanup:
 
 https://didixyy.github.io/csv-cleanup-service-10usd/email-list-csv-cleanup.html
+
+Free CSV header cleanup tool:
+
+https://didixyy.github.io/csv-cleanup-service-10usd/free-csv-header-cleanup-tool.html
 
 CSV cleanup brief builder:
 

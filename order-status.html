@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CSV Cleanup Order Status</title>
+  <meta name="description" content="Current public order status for fixed-scope 10 USD CSV cleanup: open intake, PayPal.Me payment link, request form, Payment sender email, and fixed scope.">
+  <link rel="canonical" href="https://didixyy.github.io/csv-cleanup-service-10usd/order-status.html">
+  <link rel="icon" href="data:,">
+  <meta property="og:title" content="CSV Cleanup Order Status">
+  <meta property="og:description" content="Current public status for fixed-scope 10 USD CSV cleanup orders.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://didixyy.github.io/csv-cleanup-service-10usd/order-status.html">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "CSV Cleanup Order Status",
+      "serviceType": "CSV cleanup",
+      "description": "Current public order status for one fixed-scope 10 USD CSV or Excel cleanup task.",
+      "provider": {
+        "@type": "Person",
+        "email": "331596501@qq.com",
+        "url": "https://github.com/didixyy"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "10.00",
+        "priceCurrency": "USD",
+        "url": "https://paypal.me/yp1233/10USD",
+        "availability": "https://schema.org/InStock"
+      },
+      "dateModified": "2026-06-04"
+    }
+  </script>
+  <style>
+    :root {
+      --ink: #132029;
+      --muted: #4f5f68;
+      --line: #d9e2e7;
+      --paper: #ffffff;
+      --soft: #edf6f2;
+      --accent: #0f766e;
+      --accent-strong: #0a514b;
+      --warning: #985b18;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.55;
+    }
+    a {
+      color: var(--accent-strong);
+    }
+    .wrap {
+      width: min(1080px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+    header,
+    section {
+      padding: 38px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    header,
+    .soft {
+      background: var(--soft);
+    }
+    nav,
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+    }
+    nav {
+      margin-bottom: 24px;
+    }
+    h1 {
+      max-width: 860px;
+      margin: 0;
+      font-size: clamp(34px, 6vw, 58px);
+      line-height: 1.05;
+      letter-spacing: 0;
+    }
+    h2 {
+      margin: 0 0 14px;
+      font-size: 28px;
+      letter-spacing: 0;
+    }
+    p {
+      max-width: 820px;
+      margin: 12px 0 0;
+      color: var(--muted);
+      font-size: 18px;
+    }
+    .button,
+    .secondary-button {
+      display: inline-flex;
+      min-height: 44px;
+      align-items: center;
+      justify-content: center;
+      padding: 11px 16px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .button {
+      color: #fff;
+      background: var(--accent);
+      border: 1px solid var(--accent);
+    }
+    .secondary-button {
+      color: var(--accent-strong);
+      background: #fff;
+      border: 1px solid var(--accent);
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+    .item {
+      min-height: 132px;
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+    }
+    .item strong {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--ink);
+    }
+    .item span {
+      color: var(--muted);
+    }
+    .status {
+      display: inline-flex;
+      margin-top: 18px;
+      padding: 10px 14px;
+      border: 1px solid var(--accent);
+      border-radius: 6px;
+      color: var(--accent-strong);
+      background: #fff;
+      font-weight: 700;
+    }
+    ul {
+      margin: 0;
+      padding-left: 20px;
+      color: var(--muted);
+      font-size: 17px;
+    }
+    li + li {
+      margin-top: 8px;
+    }
+    .warning {
+      color: var(--warning);
+      font-weight: 700;
+    }
+    footer {
+      padding: 28px 0 42px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    @media (max-width: 760px) {
+      .wrap {
+        width: min(100% - 28px, 1080px);
+      }
+      .button,
+      .secondary-button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <nav>
+        <a class="secondary-button" href="index.html">10 USD service</a>
+        <a class="secondary-button" href="paid-csv-cleanup-order.html">Paid order page</a>
+        <a class="secondary-button" href="csv-cleanup-brief-builder.html">Brief builder</a>
+        <a class="secondary-button" href="free-csv-cleanup-audit.html">CSV cleanup audit</a>
+        <a class="secondary-button" href="service-status.json">Service status JSON</a>
+      </nav>
+      <h1>CSV Cleanup Order Status</h1>
+      <p>Current public intake status for one fixed-scope 10 USD CSV or Excel cleanup task. Last reviewed on 2026-06-04.</p>
+      <div class="status">Status: open for fixed-scope paid briefs</div>
+      <div class="actions" style="margin-top: 18px;">
+        <a class="button" href="https://paypal.me/yp1233/10USD">Pay 10 USD now</a>
+        <a class="secondary-button" href="https://github.com/didixyy/csv-cleanup-service-10usd/issues/new?template=csv-cleanup.yml">Submit CSV request form</a>
+        <a class="secondary-button" href="https://github.com/didixyy/csv-cleanup-service-10usd/releases/tag/paid-csv-cleanup-order-v1">Download paid brief</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <div class="wrap">
+        <h2>Current order path</h2>
+        <div class="grid">
+          <div class="item"><strong>Fixed price</strong><span>10 USD for one small CSV or Excel cleanup that clearly fits the starter scope.</span></div>
+          <div class="item"><strong>Payment match</strong><span>Payment sender email is required in the request so the PayPal payment can be matched manually.</span></div>
+          <div class="item"><strong>Request form</strong><span>Use the CSV request form after payment, or before payment if row count, column count, or cleanup rules are unclear.</span></div>
+          <div class="item"><strong>Delivery shape</strong><span>Cleaned file plus a short note explaining what changed and what was left untouched.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="soft">
+      <div class="wrap">
+        <h2>Fixed 10 USD scope</h2>
+        <ul>
+          <li>One CSV or Excel file.</li>
+          <li>Up to 300 rows and 12 columns.</li>
+          <li>Readable column labels, spacing cleanup, blank row cleanup, and obvious duplicate row review.</li>
+          <li>No private credentials, bank details, card data, passwords, platform logins, or API keys.</li>
+          <li><span class="warning">If the file is larger or unclear, open the request form before paying.</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <h2>Proof and links</h2>
+        <div class="grid">
+          <div class="item"><strong>Paid order page</strong><span><a href="paid-csv-cleanup-order.html">Open the direct paid order path</a>.</span></div>
+          <div class="item"><strong>Sample delivery</strong><span><a href="https://didixyy.github.io/remote-freelancer-first-sale-kit/csv-cleanup-delivery-example.html">Review the sample cleanup delivery</a>.</span></div>
+          <div class="item"><strong>Scope checker</strong><span><a href="https://didixyy.github.io/remote-freelancer-first-sale-kit/scope-checker.html">Check row and column limits before paying</a>.</span></div>
+          <div class="item"><strong>Order desk</strong><span><a href="https://github.com/didixyy/csv-cleanup-service-10usd/issues/1">Open the public CSV cleanup order desk</a>.</span></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">Contact: 331596501@qq.com. Fixed-scope payment link: https://paypal.me/yp1233/10USD. CSV request form: https://github.com/didixyy/csv-cleanup-service-10usd/issues/new?template=csv-cleanup.yml</div>
+  </footer>
+</body>
+</html>

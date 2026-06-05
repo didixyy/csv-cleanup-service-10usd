@@ -44,6 +44,14 @@ Paid 10 USD CSV cleanup order page:
 
 https://didixyy.github.io/csv-cleanup-service-10usd/paid-csv-cleanup-order.html
 
+CSV cleanup order status page:
+
+https://didixyy.github.io/csv-cleanup-service-10usd/order-status.html
+
+Machine-readable service status:
+
+https://didixyy.github.io/csv-cleanup-service-10usd/service-status.json
+
 Paid order brief release:
 
 https://github.com/didixyy/csv-cleanup-service-10usd/releases/tag/paid-csv-cleanup-order-v1

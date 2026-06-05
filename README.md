@@ -12,6 +12,14 @@ Paid 10 USD CSV cleanup order page:
 
 https://didixyy.github.io/csv-cleanup-service-10usd/paid-csv-cleanup-order.html
 
+CSV cleanup order status page:
+
+https://didixyy.github.io/csv-cleanup-service-10usd/order-status.html
+
+Machine-readable service status:
+
+https://didixyy.github.io/csv-cleanup-service-10usd/service-status.json
+
 Paid order brief release:
 
 https://github.com/didixyy/csv-cleanup-service-10usd/releases/tag/paid-csv-cleanup-order-v1
@@ -116,6 +124,10 @@ https://didixyy.github.io/remote-freelancer-first-sale-kit/scope-checker.html
 Use the paid order page when the file clearly fits and the Payment sender email is ready:
 
 https://didixyy.github.io/csv-cleanup-service-10usd/paid-csv-cleanup-order.html
+
+Use the order status page to confirm public intake status:
+
+https://didixyy.github.io/csv-cleanup-service-10usd/order-status.html
 
 Download the paid order brief template when a copyable request is needed:
 

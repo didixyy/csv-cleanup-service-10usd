@@ -1,0 +1,49 @@
+{
+  "serviceName": "10 USD CSV Cleanup Service",
+  "status": "open",
+  "lastReviewedDate": "2026-06-04",
+  "price": "10.00",
+  "currency": "USD",
+  "paymentUrl": "https://paypal.me/yp1233/10USD",
+  "contactEmail": "331596501@qq.com",
+  "requestFormUrl": "https://github.com/didixyy/csv-cleanup-service-10usd/issues/new?template=csv-cleanup.yml",
+  "orderDeskUrl": "https://github.com/didixyy/csv-cleanup-service-10usd/issues/1",
+  "paidOrderPageUrl": "https://didixyy.github.io/csv-cleanup-service-10usd/paid-csv-cleanup-order.html",
+  "orderStatusPageUrl": "https://didixyy.github.io/csv-cleanup-service-10usd/order-status.html",
+  "paidBriefReleaseUrl": "https://github.com/didixyy/csv-cleanup-service-10usd/releases/tag/paid-csv-cleanup-order-v1",
+  "sampleDeliveryUrl": "https://didixyy.github.io/remote-freelancer-first-sale-kit/csv-cleanup-delivery-example.html",
+  "scopeCheckerUrl": "https://didixyy.github.io/remote-freelancer-first-sale-kit/scope-checker.html",
+  "requiredPaymentMatchField": "Payment sender email",
+  "fixedScope": {
+    "fileCount": 1,
+    "maxRows": 300,
+    "maxColumns": 12,
+    "included": [
+      "Readable column labels",
+      "Spacing cleanup",
+      "Blank row cleanup",
+      "Obvious duplicate row review",
+      "Short delivery note"
+    ]
+  },
+  "notIncluded": [
+    "Accounting",
+    "Tax",
+    "Legal",
+    "Investment",
+    "Audit",
+    "Import troubleshooting",
+    "Research",
+    "Data verification",
+    "Guaranteed income",
+    "Marketplace approval",
+    "Shipping result",
+    "Payment dispute result",
+    "Private credentials",
+    "Bank details",
+    "Card data",
+    "Passwords",
+    "Platform logins",
+    "API keys"
+  ]
+}

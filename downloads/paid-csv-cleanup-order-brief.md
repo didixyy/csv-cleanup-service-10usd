@@ -10,6 +10,14 @@ Fixed payment link:
 
 https://paypal.me/yp1233/10USD
 
+CSV cleanup order status page:
+
+https://didixyy.github.io/csv-cleanup-service-10usd/order-status.html
+
+Machine-readable service status:
+
+https://didixyy.github.io/csv-cleanup-service-10usd/service-status.json
+
 CSV cleanup request form:
 
 https://github.com/didixyy/csv-cleanup-service-10usd/issues/new?template=csv-cleanup.yml
